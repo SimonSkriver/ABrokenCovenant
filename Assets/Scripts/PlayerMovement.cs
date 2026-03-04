@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
 
     [SerializeField] CharacterController controller;
-    [SerializeField] float movementSpeed = 10f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
+    [SerializeField] float movementSpeed = 4f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
     [SerializeField] float jumpHeight = 3f;
 
     [SerializeField] float gravity = -9.81f;
@@ -41,10 +41,9 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         Vector2 inputValue = moveAction.ReadValue<Vector2>();
         Vector3 horizontalMovement = (transform.right * inputValue.x + transform.forward * inputValue.y) * movementSpeed;
-        horizontalMovement = Vector3.ClampMagnitude(horizontalMovement, 1f);
         
         //Combine vertical and horizontal movement
-        Vector3 unifiedMovement = (horizontalMovement * movementSpeed) + (velocity.y * Vector3.up);
+        Vector3 unifiedMovement = horizontalMovement + (velocity.y * Vector3.up);
         controller.Move(unifiedMovement * Time.deltaTime);
     }
 }
