@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Res-in-luto-est.slnx"
+    "dotnet.defaultSolution": "ShitsFucked.slnx"
 }
