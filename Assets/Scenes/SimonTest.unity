@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 187194015}
   - component: {fileID: 187194014}
   - component: {fileID: 187194013}
+  - component: {fileID: 187194016}
   - component: {fileID: 187194012}
   - component: {fileID: 187194011}
   m_Layer: 0
@@ -371,6 +372,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 187.698, z: 0}
+--- !u!114 &187194016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187194010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a685143660a22a246ad1f7930f216d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  currentState: 0
+  hands: {fileID: 999483452}
 --- !u!1001 &510387778
 PrefabInstance:
   m_ObjectHideFlags: 0

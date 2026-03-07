@@ -17,6 +17,6 @@ public class RotatePuzzle : MonoBehaviour
 
     public void BeginPuzzle(PlayerInteract player)
     {
-        player.currentState = PlayerState.InPuzzle;
+        //player.currentState = PlayerState.InPuzzle;
     }
 }
