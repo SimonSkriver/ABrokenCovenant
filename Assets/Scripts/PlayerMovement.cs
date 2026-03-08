@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
         //Jump
         if (controller.isGrounded && jumpAction.IsPressed())
         {
@@ -36,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
         //Apply gravity
         velocity.y += gravity * Time.deltaTime;
-
 
         //Movement
         Vector2 inputValue = moveAction.ReadValue<Vector2>();
