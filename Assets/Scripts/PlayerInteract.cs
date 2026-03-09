@@ -7,7 +7,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Transform hands;
     [SerializeField] float reach = 1f;
 
-    private InputAction interactAction;
+    public InputAction interactAction;
     private IInteractable interactable;
 
     void Start()
@@ -30,12 +30,11 @@ public class PlayerInteract : MonoBehaviour
                 if (interactable != null)
                 {
                     interactable.Interact(hit.transform);
-                    PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
                 }
             }
         }
         
-        else if (interactAction.WasPressedThisFrame() && PlayerMovement.Instance.currentState == PlayerState.IsCarrying)
+        else if (interactAction.WasPressedThisFrame() && (PlayerMovement.Instance.currentState == PlayerState.IsCarrying || PlayerMovement.Instance.currentState == PlayerState.InPuzzle))
         {
             Debug.Log("Dropping");
             interactable.Drop();

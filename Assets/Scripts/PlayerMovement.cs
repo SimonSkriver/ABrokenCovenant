@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance { get; private set; }
+    public static PlayerMovement Instance;
 
-    public PlayerState currentState { get; set; }
+    public PlayerState currentState = PlayerState.Normal;
 
     InputAction moveAction;
     InputAction jumpAction;
@@ -39,6 +39,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (currentState != PlayerState.InPuzzle)
+        {
+            HandleJumping();
+            HandleMovement();
+        }
+    }
+
+    void HandleJumping()
+    {
         //Jump
         if (controller.isGrounded && jumpAction.IsPressed())
         {
@@ -53,7 +62,10 @@ public class PlayerMovement : MonoBehaviour
 
         //Apply gravity
         velocity.y += gravity * Time.deltaTime;
+    }
 
+    void HandleMovement()
+    {
         //Movement
         Vector2 inputValue = moveAction.ReadValue<Vector2>();
         Vector3 horizontalMovement = (transform.right * inputValue.x + transform.forward * inputValue.y) * movementSpeed;

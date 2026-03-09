@@ -3,12 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraMovement : MonoBehaviour
 {
-    
-    [SerializeField] protected float mouseSensitivity = 10f;
-    [SerializeField] protected Transform playerController;
-    protected float xRotation = 0f;
+    [SerializeField] float mouseSensitivity = 10f;
+    [SerializeField] Transform playerController;
 
-    InputAction lookAction;
+    private float xRotation = 0f;
+    private InputAction lookAction;
     
     void Start()
     {
