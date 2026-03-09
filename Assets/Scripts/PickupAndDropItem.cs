@@ -9,6 +9,7 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 
     public void Interact(Transform obj)
     {
+        //PlayerMovement.instance.currentState = PlayerState.IsCarrying;
         heldObject = obj;
         oldObjectAnchor = obj.parent;
 
@@ -25,9 +26,10 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
     public void Drop()
     {
         Transform obj = heldObject;
-        
+        PlayerMovement.Instance.currentState = PlayerState.Normal;
+
         //Re-enable properties
-        obj.SetParent(oldObjectAnchor);
+        obj.transform.parent = null;
         obj.GetComponent<Rigidbody>().isKinematic = false;
         obj.GetComponent<BoxCollider>().enabled = true;
 

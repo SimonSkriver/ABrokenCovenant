@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
 {
-    [SerializeField] PlayerState currentState = PlayerState.Normal;
     [SerializeField] Transform eyes;
     [SerializeField] Transform hands;
     [SerializeField] float reach = 1f;
@@ -23,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
 
     void HandleInteract()
     {
-        if (interactAction.WasPressedThisFrame() && currentState == PlayerState.Normal)
+        if (interactAction.WasPressedThisFrame() && PlayerMovement.Instance.currentState == PlayerState.Normal)
         {
             if (Physics.Raycast(eyes.position, eyes.forward, out RaycastHit hit, reach))
             {
@@ -31,16 +30,15 @@ public class PlayerInteract : MonoBehaviour
                 if (interactable != null)
                 {
                     interactable.Interact(hit.transform);
-                    currentState = PlayerState.IsCarrying;
+                    PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
                 }
             }
         }
         
-        else if (interactAction.WasPressedThisFrame() && currentState == PlayerState.IsCarrying)
+        else if (interactAction.WasPressedThisFrame() && PlayerMovement.Instance.currentState == PlayerState.IsCarrying)
         {
             Debug.Log("Dropping");
             interactable.Drop();
-            currentState = PlayerState.Normal;
         }
     }  
 }

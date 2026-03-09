@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance { get; private set; }
+
+    public PlayerState currentState { get; set; }
+
     InputAction moveAction;
     InputAction jumpAction;
 
@@ -12,6 +16,20 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float gravity = -9.81f;
     Vector3 velocity;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Debug.Log("Burger");
+            Instance = this;
+            currentState = PlayerState.Normal;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {

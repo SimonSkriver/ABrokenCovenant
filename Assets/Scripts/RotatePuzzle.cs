@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RotatePuzzle : MonoBehaviour
+public class RotatePuzzle : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject player;
     [SerializeField] Transform playerAnchor;
@@ -15,8 +15,13 @@ public class RotatePuzzle : MonoBehaviour
         
     }
 
-    public void BeginPuzzle(PlayerInteract player)
+    public void Interact(Transform obj)
     {
-        //player.currentState = PlayerState.InPuzzle;
+        
+    }
+
+    public void Drop()
+    {
+        
     }
 }
