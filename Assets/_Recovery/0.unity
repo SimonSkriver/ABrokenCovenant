@@ -538,10 +538,6 @@ PrefabInstance:
       propertyPath: reach
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 3480691724674233688, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
-      propertyPath: interactAction.m_Name
-      value: Interact
-      objectReference: {fileID: 0}
     - target: {fileID: 4467803782581377206, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -775,11 +771,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &859374826 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5133573098207077779, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
-  m_PrefabInstance: {fileID: 510387778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &988841922
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +880,7 @@ Transform:
   m_GameObject: {fileID: 1047022119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.119, y: 0.346, z: 0.607}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1002,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 1172911094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.16220415, y: 0.25587136, z: 0.63937676}
   m_LocalScale: {x: 0.024369942, y: 0.68841654, z: 0.6884165}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1110,11 +1101,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1345804466 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4467803782581377206, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
-  m_PrefabInstance: {fileID: 510387778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1446128058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,10 +1183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotatePuzzle
   playerAnchor: {fileID: 1446128059}
+  mouseSens: 1
   horizontalPivot: {fileID: 1047022120}
   verticalPivot: {fileID: 1659647506}
-  horizontalAim: {fileID: 1345804466}
-  verticalAim: {fileID: 859374826}
 --- !u!65 &1570516035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1246,7 +1231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659647505}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

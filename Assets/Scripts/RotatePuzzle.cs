@@ -1,19 +1,18 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class RotatePuzzle : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform playerAnchor;
-    [SerializeField] float mouseSens = 1f;
     [SerializeField] Transform horizontalPivot;
     [SerializeField] Transform verticalPivot;
-    private InputAction lookAction;
+    [SerializeField] Transform horizontalAim;
+    [SerializeField] Transform verticalAim;
+    private float initialLookDir;
     private PlayerInteract playerInteract;
     
     void Start()
     {
         playerInteract = GetComponent<PlayerInteract>();
-        lookAction = InputSystem.actions.FindAction("Look");
     }
 
     void Update()
@@ -28,8 +27,7 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
     {
         Debug.Log("Youre in puzzle");
         PlayerMovement.Instance.currentState = PlayerState.InPuzzle;
-        PlayerMovement.Instance.transform.position = playerAnchor.position;
-        //playerInteract.interactAction.
+        initialLookDir = horizontalAim.eulerAngles.y;
     }
 
     public void Drop()
@@ -39,8 +37,9 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
 
     void DoPuzzle()
     {
-        Vector2 mouseInput = lookAction.ReadValue<Vector2>();
-        float horizontalInput = mouseInput.x * mouseSens * Time.deltaTime;
-        horizontalPivot.transform.rotation = Quaternion.Euler(transform.rotation.x, horizontalInput, transform.rotation.z);
+        PlayerMovement.Instance.transform.position = playerAnchor.position;
+        float horizontalRotation = horizontalAim.eulerAngles.y - initialLookDir;
+        horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalRotation, horizontalPivot.eulerAngles.z);
+        playerAnchor.SetParent(horizontalPivot);
     }
 }
