@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a685143660a22a246ad1f7930f216d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
-  hands: {fileID: 999483452}
+  hands: {fileID: 0}
 --- !u!1 &272002169
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 3480691724674233688, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: hands
       value: 
-      objectReference: {fileID: 999483452}
+      objectReference: {fileID: 0}
     - target: {fileID: 3480691724674233688, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: reach
       value: 3
@@ -859,11 +859,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &999483452 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
-  m_PrefabInstance: {fileID: 510387778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047022119
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +888,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1446128059}
   - {fileID: 1659647506}
   m_Father: {fileID: 1570516033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1140,11 +1136,11 @@ Transform:
   m_GameObject: {fileID: 1446128058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33423525, y: 0.12793544, z: 0.7426089}
-  m_LocalScale: {x: 0.91382617, y: 0.91382617, z: 0.91382617}
+  m_LocalPosition: {x: -0.45323527, y: -0.21806455, z: 0.13560897}
+  m_LocalScale: {x: 0.9138262, y: 0.9138262, z: 0.9138262}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570516033}
+  m_Father: {fileID: 1047022120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570516032
 GameObject:
@@ -1180,7 +1176,6 @@ Transform:
   - {fileID: 2032922304}
   - {fileID: 272002170}
   - {fileID: 2064009552}
-  - {fileID: 1446128059}
   - {fileID: 1047022120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1198,9 +1193,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotatePuzzle
   playerAnchor: {fileID: 1446128059}
   horizontalPivot: {fileID: 1047022120}
-  verticalPivot: {fileID: 1659647506}
   horizontalAim: {fileID: 1345804466}
+  verticalPivot: {fileID: 1659647506}
   verticalAim: {fileID: 859374826}
+  degreesOfMotion: 45
 --- !u!65 &1570516035
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1335,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a685143660a22a246ad1f7930f216d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
-  hands: {fileID: 999483452}
+  hands: {fileID: 0}
 --- !u!23 &1675982450
 MeshRenderer:
   m_ObjectHideFlags: 0
