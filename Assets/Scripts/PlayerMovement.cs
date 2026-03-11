@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Instance == null)
         {
-            Debug.Log("Burger");
             Instance = this;
             currentState = PlayerState.Normal;
         }
