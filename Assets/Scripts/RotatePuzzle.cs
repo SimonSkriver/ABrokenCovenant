@@ -8,29 +8,31 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
     [SerializeField] float degreesOfMotion = 45f;
-    private float startY;
 
-    private PlayerInteract playerInteract;
+    private float startY;
+    private static RotatePuzzle activePuzzle;
     
-    void Start()
+    void Awake()
     {
-        playerInteract = GetComponent<PlayerInteract>();
+        horizontalAim = GameObject.FindGameObjectWithTag("Player").transform;
+        verticalAim = GameObject.FindGameObjectWithTag("PlayerCam").transform;
     }
 
     void Update()
     {
-        if (PlayerMovement.Instance.currentState == PlayerState.InPuzzle)
+        if (PlayerMovement.Instance.currentState == PlayerState.InPuzzle && activePuzzle == this)
         {
             DoPuzzle();
         }
     }
 
-    public void Interact(Transform obj)
+    public void Interact(GameObject obj)
     {
+        activePuzzle = this;
         Debug.Log("Doing puzzle");
         PlayerMovement.Instance.currentState = PlayerState.InPuzzle;
-        horizontalAim.rotation = Quaternion.LookRotation(horizontalPivot.right);
-        verticalAim.rotation = Quaternion.LookRotation(verticalPivot.right);
+        horizontalAim.rotation = Quaternion.LookRotation(horizontalPivot.forward);
+        verticalAim.rotation = Quaternion.LookRotation(verticalPivot.forward);
         startY = horizontalAim.eulerAngles.y;
     }
 
@@ -43,17 +45,18 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
         PlayerMovement.Instance.transform.position = playerAnchor.position;
 
         //Clamp the value of horizontal aim
-        float clampedYRotation = horizontalAim.eulerAngles.y;
+        /*float clampedYRotation = horizontalAim.eulerAngles.y;
         clampedYRotation = Mathf.Clamp(clampedYRotation, startY - degreesOfMotion, startY + degreesOfMotion);
-        horizontalAim.rotation = Quaternion.Euler(0, clampedYRotation, 0);
+        horizontalAim.rotation = Quaternion.Euler(0, clampedYRotation, 0);*/
 
         //Rotate the mirror based on camera and player rotation
-        horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y - 90f, horizontalPivot.eulerAngles.z);
-        verticalPivot.rotation = Quaternion.Euler(verticalPivot.eulerAngles.x, verticalPivot.eulerAngles.y, -verticalAim.eulerAngles.x);
+        horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y, horizontalPivot.eulerAngles.z);
+        verticalPivot.rotation = Quaternion.Euler(verticalAim.eulerAngles.x, verticalPivot.eulerAngles.y, verticalPivot.eulerAngles.z);
     }
 
     public void Drop()
     {
+        activePuzzle = null;
         PlayerMovement.Instance.currentState = PlayerState.Normal;
     }
 }

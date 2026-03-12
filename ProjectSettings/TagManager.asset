@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickup
   - Puzzle
+  - PlayerCam
   layers:
   - Default
   - TransparentFX
