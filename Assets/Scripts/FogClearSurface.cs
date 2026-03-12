@@ -1,16 +1,32 @@
+using System;
 using UnityEngine;
 
 public class FogClearSurface : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("References")]
+    [SerializeField] private GameObject particleParent;
+    [SerializeField] private ParticleSystem[] particleSystems;
     void Start()
     {
-        
+        particleSystems = particleParent.GetComponentsInChildren<ParticleSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnableParticles()
     {
-        
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            var main = particle.main;
+            main.loop = true;
+            particle.Play(true);
+        }
+    }
+
+    public void DisableParticles()
+    {
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            var main = particle.main;
+            main.loop = false;
+        }
     }
 }

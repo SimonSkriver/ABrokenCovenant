@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class MultiBeamScript : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class MultiBeamScript : MonoBehaviour
     [SerializeField] private LayerMask layersToHit;
     [SerializeField] private float surfaceOffset = 0.02f;
 
-    
+    [Header("Fog Stuff")]
+    [SerializeField] private HashSet<FogClearSurface> PastFogClearererer = new HashSet<FogClearSurface>();
+
 
     void Start()
     {
@@ -36,6 +39,8 @@ public class MultiBeamScript : MonoBehaviour
 
     private void DrawBeam()
     {
+        HashSet<FogClearSurface> CurrentFogClearererer = new HashSet<FogClearSurface>();
+
         List<Vector3> points = new List<Vector3>();
 
         Vector3 currentOrigin = rayBase.position;
@@ -55,6 +60,14 @@ public class MultiBeamScript : MonoBehaviour
 
                 MirrorSurface mirror = hit.collider.GetComponentInParent<MirrorSurface>();
                 LockedMirrorSurface lockedMirror = hit.collider.GetComponentInParent<LockedMirrorSurface>();
+                FogClearSurface fogClearSurface = hit.collider.GetComponentInParent<FogClearSurface>();
+
+                if (fogClearSurface != null)
+                {
+                    fogClearSurface.DisableParticles();
+                    CurrentFogClearererer.Add(fogClearSurface);
+                    continue;
+                }
 
                 if (mirror != null)
                 {
@@ -71,7 +84,6 @@ public class MultiBeamScript : MonoBehaviour
                     continue;
                 }
 
-                break;
             }
             else
             {
@@ -83,6 +95,18 @@ public class MultiBeamScript : MonoBehaviour
             }
         }
 
+        //Fog enabler if sunbeam has left mirror
+        foreach (FogClearSurface fogScript in PastFogClearererer)
+        {
+            if (!CurrentFogClearererer.Contains(fogScript))
+            {
+                fogScript.EnableParticles();
+            }
+        }
+           
+        PastFogClearererer = CurrentFogClearererer;
+
+
         if (tubeRenderer != null)
         {
           tubeRenderer.SetPositions(points.ToArray()); 
@@ -91,4 +115,6 @@ public class MultiBeamScript : MonoBehaviour
         //lineRenderer.positionCount = points.Count;
         //lineRenderer.SetPositions(points.ToArray());
     }
+
+
 }
