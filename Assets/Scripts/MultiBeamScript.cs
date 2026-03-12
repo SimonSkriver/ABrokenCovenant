@@ -54,11 +54,20 @@ public class MultiBeamScript : MonoBehaviour
                 Debug.DrawRay(currentOrigin, currentDirection * hit.distance, Color.red);
 
                 MirrorSurface mirror = hit.collider.GetComponentInParent<MirrorSurface>();
+                LockedMirrorSurface lockedMirror = hit.collider.GetComponentInParent<LockedMirrorSurface>();
 
                 if (mirror != null)
                 {
                     currentDirection = Vector3.Reflect(currentDirection, hit.normal).normalized;
                     currentOrigin = hit.point + currentDirection * surfaceOffset;
+                    continue;
+                }
+                
+                if (lockedMirror != null)
+                {
+                    Transform beamEmitter = lockedMirror.GetTransform();
+                    currentOrigin = beamEmitter.position; //Might get changed to hitpoint if it looks too weird
+                    currentDirection = beamEmitter.forward.normalized;
                     continue;
                 }
 
