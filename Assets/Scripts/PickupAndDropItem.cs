@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class PickupAndDropItem : MonoBehaviour, IInteractable
 {
-    [SerializeField] Transform hands;
-    
+    private Transform hands;
     private GameObject heldObject;
-    //private Transform oldObjectAnchor;
+
+    void Awake()
+    {
+        hands = GameObject.FindGameObjectWithTag("Hands").transform;
+    }
 
     public void Interact(GameObject obj)
     {
         PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
         heldObject = obj;
-        //oldObjectAnchor = obj.parent;
 
         //Disable physics, colliders and parent to hands
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -35,7 +37,6 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 
         //Reset mirror's rotation and clear variables
         obj.localRotation = Quaternion.identity;
-        //oldObjectAnchor = null;
         heldObject = null;
     }
 }

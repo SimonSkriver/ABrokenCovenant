@@ -7,6 +7,7 @@ TagManager:
   - Pickup
   - Puzzle
   - PlayerCam
+  - Hands
   layers:
   - Default
   - TransparentFX
