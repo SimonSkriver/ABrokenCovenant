@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3480691724674233688}
   m_Layer: 0
   m_Name: FPS_Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49c6dd3d06af72946a87f4df3e012084, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  currentState: 0
   controller: {fileID: 1287565743219296083}
   movementSpeed: 5
   jumpHeight: 0.5
@@ -89,8 +90,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
   eyes: {fileID: 5133573098207077779}
-  hands: {fileID: 0}
-  reach: 1
+  reach: 3
+  interactAction:
+    m_Name: Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 415d8b56-4c33-49f4-950c-54c3590d8477
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &1705903475339642086
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +146,7 @@ GameObject:
   - component: {fileID: 7005148612199279690}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: PlayerCam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

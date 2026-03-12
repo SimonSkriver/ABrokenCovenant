@@ -4,10 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] Transform eyes;
-    [SerializeField] Transform hands;
     [SerializeField] float reach = 1f;
-
-    public InputAction interactAction;
+    [SerializeField] InputAction interactAction;
     private IInteractable interactable;
 
     void Start()
@@ -29,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
                 interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
-                    interactable.Interact(hit.transform);
+                    interactable.Interact(hit.collider.gameObject);
                 }
             }
         }

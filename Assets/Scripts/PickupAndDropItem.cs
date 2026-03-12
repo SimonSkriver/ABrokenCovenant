@@ -4,28 +4,28 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform hands;
     
-    private Transform heldObject;
-    private Transform oldObjectAnchor;
+    private GameObject heldObject;
+    //private Transform oldObjectAnchor;
 
-    public void Interact(Transform obj)
+    public void Interact(GameObject obj)
     {
-        //PlayerMovement.instance.currentState = PlayerState.IsCarrying;
+        PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
         heldObject = obj;
-        oldObjectAnchor = obj.parent;
+        //oldObjectAnchor = obj.parent;
 
         //Disable physics, colliders and parent to hands
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
         heldObject.GetComponent<BoxCollider>().enabled = false;
-        heldObject.SetParent(hands);
+        heldObject.transform.SetParent(hands);
 
         //Reset position and rotation relative to hands
-        heldObject.localPosition = Vector3.zero;
-        heldObject.localRotation = Quaternion.identity;
+        heldObject.transform.localPosition = Vector3.zero;
+        heldObject.transform.localRotation = Quaternion.identity;
     }
 
     public void Drop()
     {
-        Transform obj = heldObject;
+        Transform obj = heldObject.GetComponent<Transform>();
         PlayerMovement.Instance.currentState = PlayerState.Normal;
 
         //Re-enable properties
@@ -35,7 +35,7 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 
         //Reset mirror's rotation and clear variables
         obj.localRotation = Quaternion.identity;
-        oldObjectAnchor = null;
+        //oldObjectAnchor = null;
         heldObject = null;
     }
 }

@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void Interact(Transform obj);
+    void Interact(GameObject obj);
     void Drop();
 }
