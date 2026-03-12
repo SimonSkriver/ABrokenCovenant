@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cc84037cb16658a4ca5f89bfbd0fed2e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189324
+  packageName: Medieval house modular full v2.0 - URP
+  packageVersion: 2.0
+  assetPath: Assets/Medieval_House/Scenes/Demo_scene/LightingData.asset
+  uploadId: 787218
