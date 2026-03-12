@@ -3,15 +3,20 @@ using System.Collections.Generic;
 
 public class MultiBeamScript : MonoBehaviour
 {
-[Header("Beam Setup")]
+    [Header("Beam Setup")]
     [SerializeField] private Transform rayBase;
     [SerializeField] private LineRenderer lineRenderer;
+
+    [Header("Other References")]
+    [SerializeField] private TubeRenderer tubeRenderer;
 
     [Header("Beam Settings")]
     [SerializeField] private float maxDistance = 25f;
     [SerializeField] private int maxBounces = 10;
     [SerializeField] private LayerMask layersToHit;
     [SerializeField] private float surfaceOffset = 0.02f;
+
+    
 
     void Start()
     {
@@ -69,7 +74,12 @@ public class MultiBeamScript : MonoBehaviour
             }
         }
 
-        lineRenderer.positionCount = points.Count;
-        lineRenderer.SetPositions(points.ToArray());
+        if (tubeRenderer != null)
+        {
+          tubeRenderer.SetPositions(points.ToArray()); 
+        }
+
+        //lineRenderer.positionCount = points.Count;
+        //lineRenderer.SetPositions(points.ToArray());
     }
 }
