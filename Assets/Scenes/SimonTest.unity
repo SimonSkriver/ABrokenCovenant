@@ -567,31 +567,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8971653
+      value: 0.13472329
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.039568868
+      value: 0.41472706
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.15610199
+      value: -0.4990233
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.41129184
+      value: -0.7488838
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -3.291
+      value: -39.47
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 18.25
+      value: -78.193
       objectReference: {fileID: 0}
     - target: {fileID: 8331289089382508503, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 48.728
+      value: -127.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -681,6 +681,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2121385787802573700, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9913548
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9336538
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8099829
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Center.x
+      value: 0.022413552
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4366605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_Center.z
+      value: -0.026772797
+      objectReference: {fileID: 0}
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
       value: MirrorMechanism01 (1)
