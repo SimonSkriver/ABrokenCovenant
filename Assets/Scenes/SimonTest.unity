@@ -681,61 +681,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2121385787802573700, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.x
-      value: 0.9913548
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9336538
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.z
-      value: 0.8099829
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.x
-      value: 0.022413552
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.y
-      value: 0.4366605
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612559941289925896, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.z
-      value: -0.026772797
-      objectReference: {fileID: 0}
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
       value: MirrorMechanism01 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.x
-      value: 1.3264939
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9237477
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Size.z
-      value: 1.2411314
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.y
-      value: -0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934442891126070520, guid: 43541f57957b553479d39162708df936, type: 3}
-      propertyPath: m_Center.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6832301856037521484, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_LocalPosition.x
