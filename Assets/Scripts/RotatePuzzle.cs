@@ -44,11 +44,6 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
         //Set player position to the anchor
         PlayerMovement.Instance.transform.position = playerAnchor.position;
 
-        //Clamp the value of horizontal aim
-        /*float clampedYRotation = horizontalAim.eulerAngles.y;
-        clampedYRotation = Mathf.Clamp(clampedYRotation, startY - degreesOfMotion, startY + degreesOfMotion);
-        horizontalAim.rotation = Quaternion.Euler(0, clampedYRotation, 0);*/
-
         //Rotate the mirror based on camera and player rotation
         horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y, horizontalPivot.eulerAngles.z);
         verticalPivot.rotation = Quaternion.Euler(verticalAim.eulerAngles.x, verticalPivot.eulerAngles.y, verticalPivot.eulerAngles.z);
