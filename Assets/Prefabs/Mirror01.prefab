@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 7165364605639679325}
   - component: {fileID: 1349431670884635256}
   - component: {fileID: 2253015870336811775}
+  - component: {fileID: 2834178386826550687}
   m_Layer: 0
   m_Name: Mesh_Mirror
   m_TagString: Untagged
@@ -180,6 +181,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2834178386826550687
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600887869965526677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2723260613333405795, guid: 9a1b1e4770c04e244a5ed1793f933999, type: 3}
 --- !u!1 &8835495680786367103
 GameObject:
   m_ObjectHideFlags: 0
