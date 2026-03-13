@@ -18,7 +18,8 @@ public class MultiBeamScript : MonoBehaviour
     [SerializeField] private float surfaceOffset = 0.02f;
 
     [Header("Fog Stuff")]
-    [SerializeField] private HashSet<FogClearSurface> PastFogClearererer = new HashSet<FogClearSurface>();
+    [SerializeField] private HashSet<FogClearSurface> pastFogClearererer = new HashSet<FogClearSurface>();
+    [SerializeField] private HashSet<CrossSurface> pastCrossClearererer = new HashSet<CrossSurface>();
 
 
     void Start()
@@ -39,7 +40,8 @@ public class MultiBeamScript : MonoBehaviour
 
     private void DrawBeam()
     {
-        HashSet<FogClearSurface> CurrentFogClearererer = new HashSet<FogClearSurface>();
+        HashSet<FogClearSurface> currentFogClearererer = new HashSet<FogClearSurface>();
+        HashSet<CrossSurface> currentCrossClearererer = new HashSet<CrossSurface>();
 
         List<Vector3> points = new List<Vector3>();
 
@@ -61,12 +63,22 @@ public class MultiBeamScript : MonoBehaviour
                 MirrorSurface mirror = hit.collider.GetComponentInParent<MirrorSurface>();
                 LockedMirrorSurface lockedMirror = hit.collider.GetComponentInParent<LockedMirrorSurface>();
                 FogClearSurface fogClearSurface = hit.collider.GetComponentInParent<FogClearSurface>();
+                CrossSurface crossSurface = hit.collider.GetComponentInParent<CrossSurface>();
+
+                if (crossSurface != null)
+                {
+                    Vector3 endPoint = hit.point;
+                    points.Add(endPoint);
+                    crossSurface.CrossAction();
+                    currentCrossClearererer.Add(crossSurface);
+                    continue;
+                }
 
                 if (fogClearSurface != null)
                 {
                     fogClearSurface.DisableParticles();
-                    CurrentFogClearererer.Add(fogClearSurface);
-                    continue;
+                    currentFogClearererer.Add(fogClearSurface);
+                    //continue;
                 }
 
                 if (mirror != null)
@@ -84,6 +96,8 @@ public class MultiBeamScript : MonoBehaviour
                     continue;
                 }
 
+                
+
             }
             else
             {
@@ -96,15 +110,23 @@ public class MultiBeamScript : MonoBehaviour
         }
 
         //Fog enabler if sunbeam has left mirror
-        foreach (FogClearSurface fogScript in PastFogClearererer)
+        foreach (FogClearSurface fogScript in pastFogClearererer)
         {
-            if (!CurrentFogClearererer.Contains(fogScript))
+            if (!currentFogClearererer.Contains(fogScript))
             {
                 fogScript.EnableParticles();
             }
         }
-           
-        PastFogClearererer = CurrentFogClearererer;
+        pastFogClearererer = currentFogClearererer;
+
+        foreach (CrossSurface crossScript in pastCrossClearererer)
+        {
+            if (!currentCrossClearererer.Contains(crossScript))
+            {
+                crossScript.CrossAction();
+            }
+        }
+        pastCrossClearererer = currentCrossClearererer;
 
 
         if (tubeRenderer != null)
