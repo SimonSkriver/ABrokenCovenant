@@ -8,6 +8,7 @@ TagManager:
   - Puzzle
   - PlayerCam
   - Hands
+  - Mirror
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class MirrorSlot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Mirror"))
+        if (other.CompareTag("Mirror")) 
         {
             SlotMirror(other.transform);
         }
@@ -14,6 +14,7 @@ public class MirrorSlot : MonoBehaviour
 
     void SlotMirror(Transform mirror)
     {
+        mirror.GetComponent<PickupAndDropItem>().heldObject = null;
         mirror.SetParent(mirrorSocket);
         mirror.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         PlayerMovement.Instance.currentState = PlayerState.Normal;

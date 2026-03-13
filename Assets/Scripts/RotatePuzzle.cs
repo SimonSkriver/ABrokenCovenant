@@ -7,9 +7,7 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
     [SerializeField] Transform horizontalAim;
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
-    [SerializeField] float degreesOfMotion = 45f;
 
-    private float startY;
     private static RotatePuzzle activePuzzle;
     
     void Awake()
@@ -33,10 +31,8 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
         PlayerMovement.Instance.currentState = PlayerState.InPuzzle;
         horizontalAim.rotation = Quaternion.LookRotation(horizontalPivot.forward);
         verticalAim.rotation = Quaternion.LookRotation(verticalPivot.forward);
-        startY = horizontalAim.eulerAngles.y;
     }
 
-    //Clamp virker ikke helt. Hvis man går ind og ud af puzzle, kan man cheese den. Clampen skal være fra første gang man interacter med den. Skal fikses. 
     //Skal også fikses, at man ikke kigger i den vej vertical pivot kigger, når man starter puzzle
 
     void DoPuzzle()
