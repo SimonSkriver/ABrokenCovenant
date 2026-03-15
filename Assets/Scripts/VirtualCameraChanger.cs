@@ -1,5 +1,5 @@
 using UnityEngine;
-//using Unity.Cinemachine;
+using Unity.Cinemachine;
 
 public class VirtualCameraChanger : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class VirtualCameraChanger : MonoBehaviour
     [SerializeField] private CinemachineCamera playerCam;
     [SerializeField] private CinemachineCamera virtualCam;
 
-    private void SwapToPlayerCamera()
+    public void SwapToPlayerCamera()
     {
         if (playerCam != null && virtualCam != null) 
         {
@@ -15,7 +15,7 @@ public class VirtualCameraChanger : MonoBehaviour
         playerCam.Priority = 10;
         }
     }
-    private void SwapToVirtualCamera()
+    public void SwapToVirtualCamera()
     {
         if (playerCam != null && virtualCam != null) 
         {
