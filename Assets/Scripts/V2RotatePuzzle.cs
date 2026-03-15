@@ -8,7 +8,7 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
 
-    private static V2RotatePuzzle activePuzzle;
+    private static RotatePuzzle activePuzzle;
     
     void Awake()
     {
