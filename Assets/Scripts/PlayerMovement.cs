@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (currentState != PlayerState.InPuzzle)
+        if (currentState != PlayerState.InPuzzle && currentState != PlayerState.LockPlayer)
         {
             HandleJumping();
             HandleMovement();
