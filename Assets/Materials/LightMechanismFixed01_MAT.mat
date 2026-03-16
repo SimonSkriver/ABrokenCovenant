@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightMechanism02_MAT
+  m_Name: LightMechanismFixed01_MAT
   m_Shader: {fileID: -6465566751694194690, guid: c209f6349f1acec40bf9d6cf41794656, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Diffuse_Map:
-        m_Texture: {fileID: 2800000, guid: c5fba375d57a9b04f87d8b2f52a19030, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6642c8b7c2ef5604db60f8f3587ca694, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Grunge_Map:
@@ -58,15 +58,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Map:
-        m_Texture: {fileID: 2800000, guid: 5db96ca32a8c8ca45b715349d1a606f3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1838045a29645e246b30384c833f6c83, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 2a7a17413370b2744b89f5af6aaa8fdd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 50ad78ca52bec144cb80ecea9978cad4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness_Map:
-        m_Texture: {fileID: 2800000, guid: 8dcae4dde514ee8409164a475b3fdef1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 52321ed8f9d6ed84291f4bf3e604695f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -84,20 +84,20 @@ Material:
     m_Ints: []
     m_Floats:
     - _Apply_wind: 0
-    - _Diffuse_Saturation: 1
+    - _Diffuse_Saturation: 0
     - _Grunge_Rotation: 0
     - _Grunge_Scale: 20
     - _Metallic_Multiplier: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness_Multiplier: 5
+    - _Roughness_Multiplier: 8
     - _UV_Rotation: 0
     - _Use_Alpha_Map: 0
     - _Wind_Scale: 0.2
     - _Wind_Size: 0.1
     - _Wind_Speed: 2
     m_Colors:
-    - _Diffuse_Tint: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - _Diffuse_Tint: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     - _Grunge_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Grunge_Tiling: {r: 0.25, g: 2, b: 0, a: 0}
     - _Grunge_Tint: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
