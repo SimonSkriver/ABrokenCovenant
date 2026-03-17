@@ -24,13 +24,17 @@ public class SettingsMenuToggle : MonoBehaviour
         settingsPanel.SetActive(true);
         //buttonSettings.SetActive(false);
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        escapeMenuShown = true;
         }
 
-        if(escapeMenuShown)
+        else if(escapeMenuShown)
         {
         settingsPanel.SetActive(false);
         //buttonSettings.SetActive(true);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        escapeMenuShown = false;
         }
     }
 }
