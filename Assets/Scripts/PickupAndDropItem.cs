@@ -17,7 +17,7 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 
         //Disable physics, colliders and parent to hands
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
-        heldObject.GetComponent<Collider>().isTrigger = true;
+        heldObject.GetComponent<BoxCollider>().isTrigger = true;
         heldObject.transform.SetParent(hands);
 
         //Reset position and rotation relative to hands
@@ -33,7 +33,7 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
         //Re-enable properties
         obj.transform.parent = null;
         obj.GetComponent<Rigidbody>().isKinematic = false;
-        obj.GetComponent<Collider>().isTrigger = false;
+        obj.GetComponent<BoxCollider>().isTrigger = false;
 
         //Reset objects' rotation, clear variables and reset player state
         obj.localRotation = Quaternion.identity;
