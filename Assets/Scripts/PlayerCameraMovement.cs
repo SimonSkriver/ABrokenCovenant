@@ -17,14 +17,17 @@ public class PlayerCameraMovement : MonoBehaviour
 
     void Update()
     {
-        Vector2 lookValue = lookAction.ReadValue<Vector2>();
+        if(PlayerMovement.Instance.currentState != PlayerState.LockPlayer)
+        {
+            Vector2 lookValue = lookAction.ReadValue<Vector2>();
         
-        float mouseX = lookValue.x * mouseSensitivity * 10 * Time.deltaTime;
-        float mouseY = lookValue.y * mouseSensitivity * 10 * Time.deltaTime;
+            float mouseX = lookValue.x * mouseSensitivity * 10 * Time.deltaTime;
+            float mouseY = lookValue.y * mouseSensitivity * 10 * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerController.Rotate(Vector3.up * mouseX);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerController.Rotate(Vector3.up * mouseX);
+        }    
     }
 }
