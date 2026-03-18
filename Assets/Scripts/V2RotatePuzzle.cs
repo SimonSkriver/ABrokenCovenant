@@ -12,8 +12,7 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
 
     [Header("SFX Trigger")]
     [SerializeField] float currentRotation;
-    [SerializeField] float newRotationTrigger;
-    [SerializeField] bool sfxPlaying = false;
+    [SerializeField] float oldRotation;
     [SerializeField] AudioSource rotateSFX;
     
     void Awake()
@@ -22,7 +21,7 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
         verticalAim = GameObject.FindGameObjectWithTag("PlayerCam").transform;
 
         currentRotation = horizontalPivot.rotation.x;
-        newRotationTrigger = currentRotation + 1;
+        oldRotation = currentRotation;
     }
 
     void Update()
@@ -30,6 +29,7 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
         if (PlayerMovement.Instance.currentState == PlayerState.InPuzzle && activePuzzle == this)
         {
             DoPuzzle();
+            PlayMirrorRotatingSFX();
         }
     }
 
@@ -48,10 +48,11 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
     {
         //Set player position to the anchor
         PlayerMovement.Instance.transform.position = playerAnchor.position;
-
+        oldRotation = horizontalPivot.rotation.x;
         //Rotate the mirror based on camera and player rotation
         horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y, horizontalPivot.eulerAngles.z);
         verticalPivot.rotation = Quaternion.Euler(verticalAim.eulerAngles.x, verticalPivot.eulerAngles.y, verticalPivot.eulerAngles.z);
+        currentRotation = horizontalPivot.rotation.x;
     }
 
     public void Drop()
@@ -62,12 +63,16 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
 
     private void PlayMirrorRotatingSFX()
     {
-        if (currentRotation > newRotationTrigger || currentRotation < newRotationTrigger)
+        if (currentRotation != oldRotation)
         {
-            if (!sfxPlaying)
+            if (!rotateSFX.isPlaying)
             {
-                
+                rotateSFX.Play();
             }
+        }
+        else if (currentRotation == oldRotation && rotateSFX.isPlaying)
+        {
+            rotateSFX.Stop();
         }
     }
 }
