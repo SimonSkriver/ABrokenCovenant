@@ -84,7 +84,7 @@ Material:
     - _QueueOffset: 0
     - _Roughness_Multiplier: 1.5
     - _UV_Rotation: 0
-    - _Use_Alpha_Map: 0
+    - _Use_Alpha_Map: 1
     - _Wind_Scale: 1
     - _Wind_Speed: 0.5
     m_Colors:
@@ -93,6 +93,6 @@ Material:
     - _Grunge_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Grunge_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _UV_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _UV_Tiling: {r: 10, g: 10, b: 0, a: 0}
+    - _UV_Tiling: {r: 8, g: 8, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

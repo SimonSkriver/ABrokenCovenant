@@ -84,7 +84,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Apply_wind: 0
-    - _Diffuse_Saturation: 1
+    - _Diffuse_Saturation: 0.9
     - _Grunge_Rotation: 0
     - _Grunge_Scale: 20
     - _Metallic_Multiplier: 1
@@ -97,7 +97,7 @@ Material:
     - _Wind_Size: 0.1
     - _Wind_Speed: 2
     m_Colors:
-    - _Diffuse_Tint: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - _Diffuse_Tint: {r: 0.65, g: 0.65, b: 0.65, a: 1}
     - _Grunge_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Grunge_Tiling: {r: 0.25, g: 2, b: 0, a: 0}
     - _Grunge_Tint: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
