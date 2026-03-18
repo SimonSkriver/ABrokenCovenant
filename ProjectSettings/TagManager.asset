@@ -9,6 +9,8 @@ TagManager:
   - PlayerCam
   - Hands
   - Mirror
+  - FadeToWhite
+  - Text
   layers:
   - Default
   - TransparentFX
