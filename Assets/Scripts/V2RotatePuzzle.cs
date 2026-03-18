@@ -7,15 +7,22 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
     [SerializeField] Transform horizontalAim;
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
-    [SerializeField] CameraChanger cameraChanger;
 
     private static V2RotatePuzzle activePuzzle;
+
+    [Header("SFX Trigger")]
+    [SerializeField] float currentRotation;
+    [SerializeField] float newRotationTrigger;
+    [SerializeField] bool sfxPlaying = false;
+    [SerializeField] AudioSource rotateSFX;
     
     void Awake()
     {
         horizontalAim = GameObject.FindGameObjectWithTag("Player").transform;
         verticalAim = GameObject.FindGameObjectWithTag("PlayerCam").transform;
-        cameraChanger = this.GetComponent<CameraChanger>();
+
+        currentRotation = horizontalPivot.rotation.x;
+        newRotationTrigger = currentRotation + 1;
     }
 
     void Update()
@@ -39,7 +46,6 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
 
     void DoPuzzle()
     {
-        cameraChanger.SwapToOtherCamera();
         //Set player position to the anchor
         PlayerMovement.Instance.transform.position = playerAnchor.position;
 
@@ -50,8 +56,18 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
 
     public void Drop()
     {
-        cameraChanger.SwapToPlayerCamera();
         activePuzzle = null;
         PlayerMovement.Instance.currentState = PlayerState.Normal;
+    }
+
+    private void PlayMirrorRotatingSFX()
+    {
+        if (currentRotation > newRotationTrigger || currentRotation < newRotationTrigger)
+        {
+            if (!sfxPlaying)
+            {
+                
+            }
+        }
     }
 }

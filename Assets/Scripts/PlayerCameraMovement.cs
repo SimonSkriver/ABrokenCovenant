@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraMovement : MonoBehaviour
 {
-    [SerializeField, Range(0f, 2f)] float mouseSensitivity;
+    [SerializeField, Range(0.05f, 1f)] float mouseSensitivity;
     [SerializeField] private float mirrorSensitivityMultiplier = 0.25f;
     [SerializeField] Transform playerController;
 
@@ -18,7 +18,7 @@ public class PlayerCameraMovement : MonoBehaviour
     }
     void Start()
     {
-        mouseSensitivity = 0.5f;
+        mouseSensitivity = 0.33f;
     }
 
     void Update()
