@@ -11,16 +11,20 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
     private static V2RotatePuzzle activePuzzle;
 
     [Header("SFX Trigger")]
-    [SerializeField] float currentRotation;
-    [SerializeField] float oldRotation;
-    [SerializeField] AudioSource rotateSFX;
+    [SerializeField] private float currentRotation;
+    [SerializeField] private float oldRotation;
+    [SerializeField] private float rotationSFXTrigger = 0.05f;
+    [SerializeField] private float stopDelay = 0.1f;
+    [SerializeField] private float lastMoveTime;
+    
+    [SerializeField] private AudioSource rotateSFX;
     
     void Awake()
     {
         horizontalAim = GameObject.FindGameObjectWithTag("Player").transform;
         verticalAim = GameObject.FindGameObjectWithTag("PlayerCam").transform;
 
-        currentRotation = horizontalPivot.rotation.x;
+        currentRotation = horizontalPivot.eulerAngles.y;
         oldRotation = currentRotation;
     }
 
@@ -35,6 +39,7 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
 
     public void Interact(GameObject obj)
     {
+        lastMoveTime = Time.time;
         activePuzzle = this;
         Debug.Log("Doing puzzle");
         PlayerMovement.Instance.currentState = PlayerState.InPuzzle;
@@ -48,29 +53,34 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
     {
         //Set player position to the anchor
         PlayerMovement.Instance.transform.position = playerAnchor.position;
-        oldRotation = horizontalPivot.rotation.x;
+        oldRotation = horizontalPivot.eulerAngles.y;
         //Rotate the mirror based on camera and player rotation
         horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y, horizontalPivot.eulerAngles.z);
         verticalPivot.rotation = Quaternion.Euler(verticalAim.eulerAngles.x, verticalPivot.eulerAngles.y, verticalPivot.eulerAngles.z);
-        currentRotation = horizontalPivot.rotation.x;
+        currentRotation = horizontalPivot.eulerAngles.y;
     }
 
     public void Drop()
     {
         activePuzzle = null;
         PlayerMovement.Instance.currentState = PlayerState.Normal;
+        if (rotateSFX.isPlaying) rotateSFX.Stop();
     }
 
     private void PlayMirrorRotatingSFX()
     {
-        if (currentRotation != oldRotation)
+        float changeValue = Mathf.Abs(Mathf.DeltaAngle(oldRotation, currentRotation));
+
+        if (changeValue > rotationSFXTrigger)
         {
+            lastMoveTime = Time.time;
+        
             if (!rotateSFX.isPlaying)
             {
                 rotateSFX.Play();
             }
         }
-        else if (currentRotation == oldRotation && rotateSFX.isPlaying)
+        else if (rotateSFX.isPlaying && Time.time - lastMoveTime > stopDelay)
         {
             rotateSFX.Stop();
         }
