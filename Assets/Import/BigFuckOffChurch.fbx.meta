@@ -3,7 +3,37 @@ guid: 233b75677fe2d834db6babdbf94f2fcb
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChurchBrick
+    second: {fileID: 2100000, guid: 8657a5af0b8eb7f478dddeb1e4f6c642, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 9f1b8b2a3cff02e4888c5311465e5279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalBraces
+    second: {fileID: 2100000, guid: 171bf753038b5314881fb0af7b83fbcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plaster
+    second: {fileID: 2100000, guid: a4cbdeea73cf78a45a4b9e71c226d38e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roofing
+    second: {fileID: 2100000, guid: c0f566690b962bd44b93437de922ae07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodenDoor
+    second: {fileID: 2100000, guid: a2c201eace953c9478fcbd862c85fe4a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
