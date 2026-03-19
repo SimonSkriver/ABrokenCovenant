@@ -368,6 +368,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 372370639449471076, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
+      propertyPath: walkSFX
+      value: 
+      objectReference: {fileID: 1929875573}
+    - target: {fileID: 372370639449471076, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
+      propertyPath: movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 372370639449471076, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
+      propertyPath: distanceSFXTrigger
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1233223310778788273, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       propertyPath: m_Name
       value: FPS_Controller
@@ -486,6 +498,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4467803782581377206, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1522611440}
+    - targetCorrespondingSourceObject: {fileID: 4467803782581377206, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1929875574}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
 --- !u!4 &15705532 stripped
@@ -2103,7 +2118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (21)
+      value: MoveableMirror 24
       objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2565,7 +2580,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80697729}
-  m_Mesh: {fileID: 1954463546}
+  m_Mesh: {fileID: 387919277}
 --- !u!114 &80697733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5565,7 +5580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (23)
+      value: MoveableMirror 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6091,7 +6106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (20)
+      value: MoveableMirror 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7918,7 +7933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (17)
+      value: MoveableMirror 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8056,6 +8071,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d04eb1ecfb2d741a1da8434557a623, type: 3}
+--- !u!114 &320303655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 372370639449471076, guid: 8d0454252d1f0734392ea24c57c3d931, type: 3}
+  m_PrefabInstance: {fileID: 15705531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c6dd3d06af72946a87f4df3e012084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!4 &321347027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8116978678789247811, guid: 1af7a92bdb1d9a4428b52d9d298c35d0, type: 3}
@@ -8601,7 +8627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (7)
+      value: LockedPositionMirror 21
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8755,7 +8781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (19)
+      value: MoveableMirror 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9088,6 +9114,184 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e47c94d4e4b1254fb80c79e514001b6, type: 3}
+--- !u!43 &387919277
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 12
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 0
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 0
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 0
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 0
+    _typelessdata: 
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0
 --- !u!1001 &388430338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9138,7 +9342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (14)
+      value: MoveableMirror 3
       objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9867,7 +10071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 426066100}
   m_Layer: 0
-  m_Name: MoveableMirror (13)
+  m_Name: MoveableMirror 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9887,6 +10091,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1526929455}
+  - {fileID: 1624071176}
   - {fileID: 1829365655}
   - {fileID: 1507625889}
   m_Father: {fileID: 1709077686}
@@ -10175,9 +10380,13 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   playerCameraMovement: {fileID: 1818873608}
+  rotatePuzzle: {fileID: 1526929460}
+  playerMovement: {fileID: 320303655}
   sensitivitySlider: {fileID: 545353939}
   escapeMenuShown: 0
   volumeSettingsShown: 0
+  savedPlayerState: 0
+  savedMasterVolume: 0
 --- !u!224 &443784537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11245,7 +11454,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 390235122}
   m_HandleRect: {fileID: 1839322758}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -13172,7 +13381,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 528069151}
   m_HandleRect: {fileID: 1901505040}
   m_Direction: 0
-  m_MinValue: 0.05
+  m_MinValue: 0.02
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.33
@@ -13248,7 +13457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (6)
+      value: LockedPositionMirror 23
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16172,6 +16381,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 211254205043797054, guid: 37b0c1e8c2cbe85459ca6a82e2b2a65c, type: 3}
   m_PrefabInstance: {fileID: 348878328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &697108525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697108526}
+  - component: {fileID: 697108527}
+  m_Layer: 0
+  m_Name: SqueakSFXSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697108526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697108525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2032112376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &697108527
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697108525}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6697441853091700912, guid: ead8eabe9a7a05e42963f46ac91d502f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b7f27b7646fda7c4f97d57dd4dcf85b9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1.775341
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &699603400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16421,7 +16759,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1136993586}
   m_HandleRect: {fileID: 107122731}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -22030,7 +22368,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (5)
+      value: LockedPositionMirror 17
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27529,7 +27867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (4)
+      value: LockedPositionMirror 7
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28392,7 +28730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (11)
+      value: LockedPositionMirror 11
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28475,7 +28813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (13)
+      value: LockedPositionMirror 15
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36260,7 +36598,7 @@ GameObject:
   - component: {fileID: 961596154}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37477,7 +37815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (18)
+      value: MoveableMirror 20
       objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47616,6 +47954,7 @@ GameObject:
   - component: {fileID: 1221776060}
   - component: {fileID: 1221776059}
   - component: {fileID: 1221776058}
+  - component: {fileID: 1221776062}
   m_Layer: 6
   m_Name: Controller
   m_TagString: Untagged
@@ -47732,6 +48071,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221776056}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1221776062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221776056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0537fa92035c9f144a249f60416bfc78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatePuzzle
+  playerAnchor: {fileID: 1032686973}
+  horizontalPivot: {fileID: 140144910}
+  horizontalAim: {fileID: 0}
+  verticalPivot: {fileID: 1353120464}
+  verticalAim: {fileID: 0}
+  currentRotation: 0
+  oldRotation: 0
+  rotationSFXTrigger: 0.05
+  stopDelay: 0.1
+  lastMoveTime: 0
+  rotateSFX: {fileID: 697108527}
+  settingsMenuScript: {fileID: 0}
 --- !u!1001 &1225040374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51364,7 +51727,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
-      value: MirrorMechanism01
+      value: MirrorMechanism 14
       objectReference: {fileID: 0}
     - target: {fileID: 6832301856037521484, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52442,7 +52805,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 831286397}
   m_HandleRect: {fileID: 1667550079}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -20
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -54160,7 +54523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
-      value: MirrorMechanism01 (1)
+      value: MirrorMechanism01 27
       objectReference: {fileID: 0}
     - target: {fileID: 6832301856037521484, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54698,7 +55061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (14)
+      value: LockedPositionMirror 16
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54837,7 +55200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (1)
+      value: LockedPositionMirror 1
       objectReference: {fileID: 0}
     - target: {fileID: 6264902959940744276, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55302,7 +55665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (9)
+      value: LockedPositionMirror 25
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55524,7 +55887,7 @@ GameObject:
   - component: {fileID: 1526929459}
   - component: {fileID: 1526929458}
   - component: {fileID: 1526929457}
-  - component: {fileID: 1526929456}
+  - component: {fileID: 1526929460}
   m_Layer: 6
   m_Name: Controller
   m_TagString: Untagged
@@ -55547,23 +55910,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 426066100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1526929456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526929454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da31372f0ba4a44ba592ff8f5e66e8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatePuzzle
-  playerAnchor: {fileID: 1260420210}
-  horizontalPivot: {fileID: 1507625889}
-  horizontalAim: {fileID: 0}
-  verticalPivot: {fileID: 513101468}
-  verticalAim: {fileID: 0}
 --- !u!65 &1526929457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55641,6 +55987,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526929454}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1526929460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526929454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0537fa92035c9f144a249f60416bfc78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::V2RotatePuzzle
+  playerAnchor: {fileID: 1260420210}
+  horizontalPivot: {fileID: 1507625889}
+  horizontalAim: {fileID: 0}
+  verticalPivot: {fileID: 513101468}
+  verticalAim: {fileID: 0}
+  currentRotation: 0
+  oldRotation: 0
+  rotationSFXTrigger: 0.05
+  stopDelay: 0.1
+  lastMoveTime: 0
+  rotateSFX: {fileID: 1624071177}
+  settingsMenuScript: {fileID: 0}
 --- !u!1001 &1529456718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55847,7 +56217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
-      value: MoveableMirror (16)
+      value: MoveableMirror 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56882,7 +57252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (12)
+      value: LockedPositionMirror 13
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57936,6 +58306,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5315074283227770319, guid: b6453f25b0e39664b9a3637694415cc6, type: 3}
   m_PrefabInstance: {fileID: 1623357904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624071175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624071176}
+  - component: {fileID: 1624071177}
+  m_Layer: 0
+  m_Name: SqueakSFXSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624071176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624071175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 426066100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1624071177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624071175}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6697441853091700912, guid: ead8eabe9a7a05e42963f46ac91d502f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b7f27b7646fda7c4f97d57dd4dcf85b9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1626480792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1825296218952273894, guid: 59ac68c440e02c941b58726372520221, type: 3}
@@ -58744,7 +59243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (16)
+      value: LockedPositionMirror 18
       objectReference: {fileID: 0}
     - target: {fileID: 6264902959940744276, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -59936,7 +60435,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1136973470}
+  - {fileID: 453849019}
   - {fileID: 426066100}
+  - {fileID: 216588004}
+  - {fileID: 1854909909}
+  - {fileID: 1979847569}
   - {fileID: 2032112376}
   - {fileID: 1954580661}
   - {fileID: 1901769689}
@@ -59945,10 +60448,7 @@ Transform:
   - {fileID: 1987035363}
   - {fileID: 1364729245}
   - {fileID: 877749532}
-  - {fileID: 1979847569}
   - {fileID: 2110432955}
-  - {fileID: 453849019}
-  - {fileID: 1854909909}
   - {fileID: 268329422}
   - {fileID: 78774613}
   - {fileID: 1369138993}
@@ -59958,12 +60458,11 @@ Transform:
   - {fileID: 2098606602}
   - {fileID: 1901278573}
   - {fileID: 168152847}
-  - {fileID: 216588004}
   - {fileID: 1488937706}
   - {fileID: 919604775}
   - {fileID: 123055548}
-  - {fileID: 665852068}
   - {fileID: 796550483}
+  - {fileID: 665852068}
   - {fileID: 439689212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67169,7 +67668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (3)
+      value: LockedPositionMirror 5
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67304,7 +67803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (15)
+      value: LockedPositionMirror 19
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67807,7 +68306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (10)
+      value: LockedPositionMirror 12
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68807,6 +69306,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5310005133221965801, guid: 415e327d1f0c5d147bf9a69d146168b7, type: 3}
   m_PrefabInstance: {fileID: 713003333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1929875572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929875574}
+  - component: {fileID: 1929875573}
+  m_Layer: 6
+  m_Name: WalkSFXSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1929875573
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929875572}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6697441853091700912, guid: ead8eabe9a7a05e42963f46ac91d502f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 7b53ab78aca842b42bec474ff72218e2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1.7433357
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1929875574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929875572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 15705532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935494225
 GameObject:
   m_ObjectHideFlags: 0
@@ -69251,184 +69879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38b797ba6cc77df40a51cd3200365644, type: 3}
   m_PrefabInstance: {fileID: 1953594399}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1954463546
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 12
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 0
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 0
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 0
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 0
-    _typelessdata: 
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
-  m_MeshLodInfo:
-    serializedVersion: 2
-    m_LodSelectionCurve:
-      serializedVersion: 1
-      m_LodSlope: 0
-      m_LodBias: 0
-    m_NumLevels: 1
-    m_SubMeshes:
-    - serializedVersion: 2
-      m_Levels:
-      - serializedVersion: 1
-        m_IndexStart: 0
-        m_IndexCount: 0
 --- !u!4 &1954580661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
@@ -71200,7 +71650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862246087451251784, guid: 532435f4d099e4d819e68080003c289a, type: 3}
       propertyPath: m_Name
-      value: MirrorLoose (1)
+      value: MirrorLoose 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -71337,7 +71787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857089447507138360, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_Name
-      value: LockedPositionMirror (2)
+      value: LockedPositionMirror 4
       objectReference: {fileID: 0}
     - target: {fileID: 6577582195590936058, guid: e199ebca20b7fb4488e6c603f5cb73ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71531,7 +71981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2032112376}
   m_Layer: 0
-  m_Name: MoveableMirror (15)
+  m_Name: MoveableMirror 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71551,6 +72001,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1221776057}
+  - {fileID: 697108526}
   - {fileID: 1875739212}
   - {fileID: 140144910}
   m_Father: {fileID: 1709077686}
@@ -73798,7 +74249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8862246087451251784, guid: 532435f4d099e4d819e68080003c289a, type: 3}
       propertyPath: m_Name
-      value: MirrorLoose
+      value: MirrorLoose 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

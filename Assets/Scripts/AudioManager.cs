@@ -8,9 +8,9 @@ public class AudioManager : MonoBehaviour
     [Header("Volume Settings")]
     [SerializeField] private AudioMixer audioMixer;
    // [SerializeField] private AudioMixerGroup[] musicMixer CANN BE ADDED WITH FOREACH FUNCTION IF WE START ADDING SUBGROUPS
-    [Range(-80f, 20f)] public float masterVolume;
-    [Range(-80f, 20f)] public float musicVolume;
-    [Range(-80f, 20f)] public float sfxVolume;
+    [Range(-20f, 20f)] public float masterVolume;
+    [Range(-20f, 20f)] public float musicVolume;
+    [Range(-20f, 20f)] public float sfxVolume;
 
     void Awake()
     {
@@ -26,12 +26,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        //IF WE WANT THE VOLUME TO START AT MIDDLE VOLUME
-        /*
-        masterVolume = -30f;
-        musicVolume = -30f;
-        sfxVolume = -30f; 
-        */
+        
     }
 
     public void SetMasterVolume(float value)
