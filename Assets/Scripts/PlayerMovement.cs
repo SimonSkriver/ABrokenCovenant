@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputActionMap;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerState currentState = PlayerState.Normal;
 
-    InputAction moveAction;
-    InputAction jumpAction;
+    private InputActionMap playerActionMap;
+    private InputAction moveAction;
+    private InputAction jumpAction;
 
     [SerializeField] CharacterController controller;
     [SerializeField] float movementSpeed = 3f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
@@ -23,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float stopDelay = 0.1f;
     [SerializeField] private float lastMoveTime;
     [SerializeField] private AudioSource walkSFX;
+
+    private Vector3 velocity;
 
 
     void Awake()
@@ -43,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        playerActionMap = InputSystem.actions.FindActionMap("Player");
+        playerActionMap.Enable();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         lastMoveTime = Time.time;
