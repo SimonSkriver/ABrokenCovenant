@@ -9331,7 +9331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8404a9ed38cf64d87640662db11d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 764017530}
 --- !u!1001 &443892088
 PrefabInstance:
   m_ObjectHideFlags: 0
