@@ -7,8 +7,8 @@ public class ChurchDoor : MonoBehaviour
 
     void Start()
     {
-        whiteAnimator = GameObject.FindGameObjectWithTag("FadeToWhite").GetComponent<Animator>();
-        textAnimator = GameObject.FindGameObjectWithTag("Text").GetComponent<Animator>();
+        whiteAnimator = GameObject.FindGameObjectWithTag("FadeToWhite").GetComponentInChildren<Animator>(true);
+        textAnimator = GameObject.FindGameObjectWithTag("Text").GetComponentInChildren<Animator>(true);
     }
 
     void OnTriggerEnter(Collider other)
