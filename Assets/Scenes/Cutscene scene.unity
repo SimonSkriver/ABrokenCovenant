@@ -70623,7 +70623,7 @@ PrefabInstance:
       objectReference: {fileID: 5248362283600747208}
     - target: {fileID: 3272805534828787238, guid: 902ae3b945437414b841c968b023dbf9, type: 3}
       propertyPath: m_Name
-      value: Cutscene 1
+      value: Cutscene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -73520,6 +73520,10 @@ PrefabInstance:
     - target: {fileID: 4787058636047651001, guid: f744224d67cbc784bbeb4b726f4c2b6c, type: 3}
       propertyPath: m_Name
       value: Sceneload
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787058636047651001, guid: f744224d67cbc784bbeb4b726f4c2b6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
