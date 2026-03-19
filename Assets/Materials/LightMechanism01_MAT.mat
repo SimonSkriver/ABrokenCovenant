@@ -69,14 +69,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: 52321ed8f9d6ed84291f4bf3e604695f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_2c8d8f71c9bf4003a327681f84f26367_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 3d337c20cbbaf834b8919315a2819df4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_4a129e28cb5d4075aa3bcc43ca0ac9ee_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: aa720d0bd20902e47ad36a7199bef81f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -92,15 +84,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Apply_wind: 0
-    - _Contrast: 1
-    - _Diffuse_Saturation: 0.9
+    - _Diffuse_Saturation: 1
     - _Grunge_Rotation: 0
     - _Grunge_Scale: 20
-    - _Inner_Edge: -3
     - _Metallic_Multiplier: 1
-    - _Noise_Blend: 1
-    - _Noise_Scale: 100
-    - _Outer_Edge: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Multiplier: 5
@@ -110,7 +97,7 @@ Material:
     - _Wind_Size: 0.1
     - _Wind_Speed: 2
     m_Colors:
-    - _Diffuse_Tint: {r: 0.65, g: 0.65, b: 0.65, a: 1}
+    - _Diffuse_Tint: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
     - _Grunge_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Grunge_Tiling: {r: 0.25, g: 2, b: 0, a: 0}
     - _Grunge_Tint: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}

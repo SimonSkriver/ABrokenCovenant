@@ -7,15 +7,23 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerState currentState = PlayerState.Normal;
 
-    private InputActionMap playerActionMap;
-    private InputAction moveAction;
-    private InputAction jumpAction;
+    InputAction moveAction;
+    InputAction jumpAction;
 
     [SerializeField] CharacterController controller;
-    [SerializeField] float movementSpeed = 4f;
+    [SerializeField] float movementSpeed = 3f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
     [SerializeField] float jumpHeight = 3f;
+
     [SerializeField] float gravity = -9.81f;
-    private Vector3 velocity;
+    Vector3 velocity;
+
+    [SerializeField] private float currentXPosition;
+    [SerializeField] private float oldXPosition;
+    [SerializeField] private float distanceSFXTrigger = 0.05f;
+    [SerializeField] private float stopDelay = 0.1f;
+    [SerializeField] private float lastMoveTime;
+    [SerializeField] private AudioSource walkSFX;
+
 
     void Awake()
     {
@@ -28,14 +36,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        currentXPosition = transform.position.x + transform.position.z;
+        oldXPosition = currentXPosition;
     }
 
     void Start()
     {
-        playerActionMap = InputSystem.actions.FindActionMap("Player");
-        playerActionMap.Enable();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        lastMoveTime = Time.time;
     }
 
     void Update()
@@ -44,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         {
             HandleJumping();
             HandleMovement();
+            HandleSFX();
         }
     }
 
@@ -68,11 +79,38 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         //Movement
+        oldXPosition = transform.position.x + transform.position.z;
         Vector2 inputValue = moveAction.ReadValue<Vector2>();
         Vector3 horizontalMovement = (transform.right * inputValue.x + transform.forward * inputValue.y) * movementSpeed;
         
         //Combine vertical and horizontal movement
         Vector3 unifiedMovement = horizontalMovement + (velocity.y * Vector3.up);
         controller.Move(unifiedMovement * Time.deltaTime);
+        currentXPosition = transform.position.x + transform.position.z;
+    }
+
+    void HandleSFX()
+    {
+        float changeValue = Mathf.Abs(oldXPosition-currentXPosition);
+
+        if (changeValue > distanceSFXTrigger)
+        {
+            lastMoveTime = Time.time;
+
+            if (!walkSFX.isPlaying)
+            {
+                walkSFX.Play();
+            }
+        }
+        else if (walkSFX.isPlaying && Time.time - lastMoveTime > stopDelay)
+        {
+            StopSFX();
+        }
+    }
+
+    
+    public void StopSFX()
+    {
+        walkSFX.Stop();
     }
 }

@@ -119,7 +119,6 @@ public class MultiBeamScript : MonoBehaviour
         }
         pastFogClearererer = currentFogClearererer;
 
-        //Double check this is being called correctly, or if I'm just stoopid - Rune
         foreach (CrossSurface crossScript in pastCrossClearererer)
         {
             if (!currentCrossClearererer.Contains(crossScript))

@@ -62,15 +62,13 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 993426bbd3dcc68438f30e1609b4af6c, type: 2}
-  - {fileID: 2100000, guid: 5915b76c84330fb4088a9440e6533257, type: 2}
-  - {fileID: 2100000, guid: 12234f6a918178a48b7b8efa5143aac3, type: 2}
-  - {fileID: 2100000, guid: 0276762fa5cd5b04da729888cbfa7280, type: 2}
+  - {fileID: 2100000, guid: b942e3d8baa12624882d5147ee2aff92, type: 2}
+  - {fileID: 2100000, guid: 831af056b9826094084f35f8ac924158, type: 2}
+  - {fileID: 2100000, guid: 376e6a43a0796f64fbd6e89b2471f910, type: 2}
+  - {fileID: 2100000, guid: 986552f34ad2cc348ada41042b0a397c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,11 +86,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &6652670166834115875
 MeshCollider:
