@@ -16,7 +16,10 @@ public class SceneLoader : MonoBehaviour
             RemoveCursor();
             SceneManager.LoadSceneAsync("Town", LoadSceneMode.Single);
         }
-        //SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        else if (SceneManager.GetActiveScene().name == "Town")
+        {
+            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+        }
     }
 
     private void RemoveCursor()
