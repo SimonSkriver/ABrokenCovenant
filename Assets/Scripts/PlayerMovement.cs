@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputActionMap;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,13 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
 
     [SerializeField] CharacterController controller;
-    [SerializeField] float movementSpeed = 3f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
+    [SerializeField] float movementSpeed = 3f;
     [SerializeField] float jumpHeight = 3f;
 
     [SerializeField] float gravity = -9.81f;
     private Vector3 velocity;
 
-    
     [Header("SFX")]
     [SerializeField] private float currentXPosition;
     [SerializeField] private float oldXPosition;
@@ -27,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float stopDelay = 0.1f;
     [SerializeField] private float lastMoveTime;
     [SerializeField] private AudioSource walkSFX;
-
-
 
     void Awake()
     {
@@ -72,13 +68,11 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //fiddle with jump so that it's less floaty. Needs to jump faster without jumping higher
         }
-
         //Keep player grounded, by forcing slight negative downward velocity
         if(controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-
         //Apply gravity
         velocity.y += gravity * Time.deltaTime;
     }
@@ -115,7 +109,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    
     public void StopSFX()
     {
         walkSFX.Stop();
