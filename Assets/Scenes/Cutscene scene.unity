@@ -1972,6 +1972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableMirror 24
       objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.998703
@@ -5318,6 +5322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableMirror 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5843,6 +5851,10 @@ PrefabInstance:
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
       value: MoveableMirror 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7671,6 +7683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableMirror 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8508,6 +8524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableMirror 26
       objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8890,6 +8910,10 @@ PrefabInstance:
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
       value: MoveableMirror 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37222,6 +37246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveableMirror 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7891882271407085920, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.993139
@@ -47330,7 +47358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1221776057
 Transform:
   m_ObjectHideFlags: 0
@@ -51077,6 +51105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1709077686}
     m_Modifications:
+    - target: {fileID: 4333032601253060771, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
       value: MirrorMechanism 14
@@ -53873,6 +53905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1709077686}
     m_Modifications:
+    - target: {fileID: 4333032601253060771, guid: 43541f57957b553479d39162708df936, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5855451989943803731, guid: 43541f57957b553479d39162708df936, type: 3}
       propertyPath: m_Name
       value: MirrorMechanism01 27
@@ -55168,7 +55204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1526929455
 Transform:
   m_ObjectHideFlags: 0
@@ -55492,6 +55528,10 @@ PrefabInstance:
     - target: {fileID: 3598347069084072740, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
       propertyPath: m_Name
       value: MoveableMirror 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624667826837888168, guid: 8c605fe26b97d844f99bafac83b6f74c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68304,6 +68344,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8116978678789247811, guid: 1af7a92bdb1d9a4428b52d9d298c35d0, type: 3}
   m_PrefabInstance: {fileID: 1740114299}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1921352167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6742628781315867822, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+  m_PrefabInstance: {fileID: 2016883774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1925202269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68494,6 +68539,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935494225}
   m_Mesh: {fileID: 8733429697405204941, guid: 38b797ba6cc77df40a51cd3200365644, type: 3}
+--- !u!1 &1936696737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6742628781315867822, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+  m_PrefabInstance: {fileID: 689895304306736663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1939641813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70638,6 +70688,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1709077686}
     m_Modifications:
+    - target: {fileID: 5758753524144704304, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758753524144704304, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+      propertyPath: heldObject
+      value: 
+      objectReference: {fileID: 1921352167}
     - target: {fileID: 6026634320351294110, guid: 532435f4d099e4d819e68080003c289a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.209
@@ -73237,6 +73295,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1709077686}
     m_Modifications:
+    - target: {fileID: 2837773625533892024, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758753524144704304, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758753524144704304, guid: 532435f4d099e4d819e68080003c289a, type: 3}
+      propertyPath: heldObject
+      value: 
+      objectReference: {fileID: 1936696737}
     - target: {fileID: 6026634320351294110, guid: 532435f4d099e4d819e68080003c289a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.4563
