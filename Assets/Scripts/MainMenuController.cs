@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject sceneLoader;
+
+    void Awake()
     {
-        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        sceneLoader.SetActive(true);
     }
 }
