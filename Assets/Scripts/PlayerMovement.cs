@@ -7,15 +7,15 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerState currentState = PlayerState.Normal;
 
-    InputAction moveAction;
-    InputAction jumpAction;
+    private InputActionMap playerActionMap;
+    private InputAction moveAction;
+    private InputAction jumpAction;
 
     [SerializeField] CharacterController controller;
-    [SerializeField] float movementSpeed = 4f; //potentially make two speed values. One for forward and one for left/right, so that strafing is a bit slower?
+    [SerializeField] float movementSpeed = 4f;
     [SerializeField] float jumpHeight = 3f;
-
     [SerializeField] float gravity = -9.81f;
-    Vector3 velocity;
+    private Vector3 velocity;
 
     void Awake()
     {
@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        playerActionMap = InputSystem.actions.FindActionMap("Player");
+        playerActionMap.Enable();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
     }
