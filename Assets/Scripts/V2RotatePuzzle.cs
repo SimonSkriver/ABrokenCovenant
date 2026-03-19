@@ -47,13 +47,12 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
         verticalAim.rotation = Quaternion.LookRotation(verticalPivot.forward);
     }
 
-    //Skal også fikses, at man ikke kigger i den vej vertical pivot kigger, når man starter puzzle
-
     void DoPuzzle()
     {
         //Set player position to the anchor
         PlayerMovement.Instance.transform.position = playerAnchor.position;
         oldRotation = horizontalPivot.eulerAngles.y;
+        
         //Rotate the mirror based on camera and player rotation
         horizontalPivot.rotation = Quaternion.Euler(horizontalPivot.eulerAngles.x, horizontalAim.eulerAngles.y, horizontalPivot.eulerAngles.z);
         verticalPivot.rotation = Quaternion.Euler(verticalAim.eulerAngles.x, verticalPivot.eulerAngles.y, verticalPivot.eulerAngles.z);

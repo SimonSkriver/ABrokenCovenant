@@ -25,29 +25,29 @@ public class PlayerCameraMovement : MonoBehaviour
     {
         if(PlayerMovement.Instance.currentState != PlayerState.LockPlayer)
         {
-        if(PlayerMovement.Instance.currentState != PlayerState.InPuzzle)
+            if(PlayerMovement.Instance.currentState != PlayerState.InPuzzle)
             {
-            Vector2 lookValue = lookAction.ReadValue<Vector2>();
+                Vector2 lookValue = lookAction.ReadValue<Vector2>();
         
-            float mouseX = lookValue.x * mouseSensitivity; //* 10 * Time.deltaTime; // Removed mouseSensitivity * 10
-            float mouseY = lookValue.y * mouseSensitivity; //* 10 * Time.deltaTime; // -||-
+                float mouseX = lookValue.x * mouseSensitivity; 
+                float mouseY = lookValue.y * mouseSensitivity; 
 
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerController.Rotate(Vector3.up * mouseX);
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerController.Rotate(Vector3.up * mouseX);
             }    
-        else
+            else
             {    
-            Vector2 lookValue = lookAction.ReadValue<Vector2>();
+                Vector2 lookValue = lookAction.ReadValue<Vector2>();
         
-            float mouseX = lookValue.x * mouseSensitivity * mirrorSensitivityMultiplier; //* 10 * Time.deltaTime; // Removed mouseSensitivity * 10
-            float mouseY = lookValue.y * mouseSensitivity * mirrorSensitivityMultiplier; //* 10 * Time.deltaTime; // -||-
+                float mouseX = lookValue.x * mouseSensitivity * mirrorSensitivityMultiplier;
+                float mouseY = lookValue.y * mouseSensitivity * mirrorSensitivityMultiplier; 
 
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerController.Rotate(Vector3.up * mouseX);
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerController.Rotate(Vector3.up * mouseX);
             }
         }
     }
