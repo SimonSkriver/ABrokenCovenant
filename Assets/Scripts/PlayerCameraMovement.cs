@@ -13,6 +13,7 @@ public class PlayerCameraMovement : MonoBehaviour
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         lookAction = InputSystem.actions.FindAction("Look");
         lookAction.Enable();
     }
