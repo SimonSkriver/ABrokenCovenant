@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChurchDoor : MonoBehaviour, IInteractable
+public class ChurchDoor : MonoBehaviour
 {
     private Animator whiteAnimator;
     private Animator textAnimator;
@@ -11,12 +11,15 @@ public class ChurchDoor : MonoBehaviour, IInteractable
         textAnimator = GameObject.FindGameObjectWithTag("Text").GetComponent<Animator>();
     }
 
-    public void Interact(GameObject obj)
+    void OnTriggerEnter(Collider other)
     {
-        PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
-        whiteAnimator.SetTrigger("FadeToWhite");
-        Invoke("ShowText", 2f);
-        Debug.Log("You won");
+        if (other.CompareTag("Player"))
+        {
+            PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
+            whiteAnimator.SetTrigger("FadeToWhite");
+            Invoke("ShowText", 2f);
+            Debug.Log("You won");
+        }
     }
 
     void ShowText()
@@ -24,10 +27,5 @@ public class ChurchDoor : MonoBehaviour, IInteractable
         textAnimator.SetTrigger("ShowText");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
-
-    public void Drop()
-    {
-        
     }
 }
