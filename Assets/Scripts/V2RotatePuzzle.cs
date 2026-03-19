@@ -81,7 +81,12 @@ public class V2RotatePuzzle : MonoBehaviour, IInteractable
         }
         else if (rotateSFX.isPlaying && Time.time - lastMoveTime > stopDelay)
         {
-            rotateSFX.Stop();
+            StopSFX();
         }
+    }
+
+    public void StopSFX()
+    {
+        rotateSFX.Stop();
     }
 }
