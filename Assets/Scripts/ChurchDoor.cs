@@ -22,6 +22,8 @@ public class ChurchDoor : MonoBehaviour, IInteractable
     void ShowText()
     {
         textAnimator.SetTrigger("ShowText");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Drop()
