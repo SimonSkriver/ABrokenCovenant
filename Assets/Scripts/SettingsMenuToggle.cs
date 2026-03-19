@@ -12,6 +12,7 @@ public class SettingsMenuToggle : MonoBehaviour
     //[SerializeField] private GameObject buttonSettings;
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
+    [SerializeField] private RotatePuzzle rotatePuzzle;
 
     [Header("Sensitivity settings")]
     [SerializeField] private Slider sensitivitySlider;
@@ -20,7 +21,9 @@ public class SettingsMenuToggle : MonoBehaviour
     [SerializeField] private bool escapeMenuShown = false;
     [SerializeField] private bool volumeSettingsShown = false;
 
-    PlayerState savedPlayerState;
+    [Header("Internal Saves")]
+    [SerializeField] private PlayerState savedPlayerState;
+    [SerializeField] private float savedMasterVolume;
 
     void Awake()
     {
@@ -38,7 +41,8 @@ public class SettingsMenuToggle : MonoBehaviour
     public void ShowAndHidePauseScreen()
     {
         if(!escapeMenuShown) 
-        {
+        {   
+            DisableSounds();
             savedPlayerState = PlayerMovement.Instance.currentState;
             PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
             pausePanel.SetActive(true);
@@ -67,7 +71,7 @@ public class SettingsMenuToggle : MonoBehaviour
             {
                PlayerMovement.Instance.currentState = PlayerState.Normal; 
             }
-            
+            EnableSounds();
         }
     }
 
@@ -93,5 +97,21 @@ public class SettingsMenuToggle : MonoBehaviour
         {
             playerCameraMovement.SetSensitivity(value);
         }
+    }
+
+    private void DisableSounds()
+    {
+        savedMasterVolume = AudioManager.Instance.masterVolume;
+        AudioManager.Instance.SetMasterVolume(-80f);
+    }
+
+    private void EnableSounds()
+    {
+        AudioManager.Instance.SetMasterVolume(savedMasterVolume);
+    }
+
+    private void DisableExternalSFXs()
+    {
+        
     }
 }
