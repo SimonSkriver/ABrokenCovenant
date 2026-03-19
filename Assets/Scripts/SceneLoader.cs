@@ -14,6 +14,5 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.LoadSceneAsync("Town", LoadSceneMode.Single);
         }
-        //SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
     }
 }
