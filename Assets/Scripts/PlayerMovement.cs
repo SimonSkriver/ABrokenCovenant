@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpHeight = 3f;
 
     [SerializeField] float gravity = -9.81f;
-    Vector3 velocity;
+    private Vector3 velocity;
 
+    
+    [Header("SFX")]
     [SerializeField] private float currentXPosition;
     [SerializeField] private float oldXPosition;
     [SerializeField] private float distanceSFXTrigger = 0.01f;
@@ -26,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lastMoveTime;
     [SerializeField] private AudioSource walkSFX;
 
-    private Vector3 velocity;
 
 
     void Awake()
