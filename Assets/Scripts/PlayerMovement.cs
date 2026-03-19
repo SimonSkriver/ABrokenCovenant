@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float currentXPosition;
     [SerializeField] private float oldXPosition;
-    [SerializeField] private float distanceSFXTrigger = 0.05f;
+    [SerializeField] private float distanceSFXTrigger = 0.01f;
     [SerializeField] private float stopDelay = 0.1f;
     [SerializeField] private float lastMoveTime;
     [SerializeField] private AudioSource walkSFX;

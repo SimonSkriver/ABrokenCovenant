@@ -421,17 +421,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a9f8b3fa-8304-4a09-bb6c-3e40b7b89e3d",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Escape",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8ab0bf48-d284-43cf-a9f4-dd56392cb768",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

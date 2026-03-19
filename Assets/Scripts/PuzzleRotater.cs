@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RotatePuzzle : MonoBehaviour, IInteractable
+public class PuzzleRotater : MonoBehaviour, IInteractable
 {
     [SerializeField] Transform playerAnchor;
     [SerializeField] Transform horizontalPivot;
@@ -8,7 +8,7 @@ public class RotatePuzzle : MonoBehaviour, IInteractable
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
 
-    private static RotatePuzzle activePuzzle;
+    private static PuzzleRotater activePuzzle;
 
     [Header("SFX Trigger")]
     [SerializeField] private float currentRotation;

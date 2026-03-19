@@ -12,7 +12,7 @@ public class SettingsMenuToggle : MonoBehaviour
     //[SerializeField] private GameObject buttonSettings;
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
-    [SerializeField] private RotatePuzzle rotatePuzzle;
+    [SerializeField] private PuzzleRotater puzzleRotater;
     [SerializeField] private PlayerMovement playerMovement;
 
     [Header("Sensitivity settings")]
@@ -53,12 +53,14 @@ public class SettingsMenuToggle : MonoBehaviour
             escapeMenuShown = true;
             mouseSensPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         else if(escapeMenuShown)
         {
             EnableSounds();
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             //Ensure revert panel if player exits to game while in volume settings via Escape
             volumeSettingsPanel.SetActive(false);
             volumeSettingsShown = false;
@@ -82,6 +84,8 @@ public class SettingsMenuToggle : MonoBehaviour
     {
         if(!volumeSettingsShown)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             EnableSounds();
             mouseSensPanel.SetActive(false);
             volumeSettingsPanel.SetActive(true);
@@ -117,11 +121,11 @@ public class SettingsMenuToggle : MonoBehaviour
     private void DisableExternalSFXs()
     {
         playerMovement.StopSFX();
-        rotatePuzzle.StopSFX();
+        if (puzzleRotater != null) puzzleRotater.StopSFX();
     }
 
-    public void SetActivePuzzleScript(RotatePuzzle puzzleScript)
+    public void SetActivePuzzleScript(PuzzleRotater puzzleScript)
     {
-        rotatePuzzle = puzzleScript;
+        puzzleRotater = puzzleScript;
     }
 }
