@@ -82,8 +82,8 @@ MonoBehaviour:
   gravity: -9.81
   currentXPosition: 0
   oldXPosition: 0
-  distanceSFXTrigger: 0.01
-  stopDelay: 0.1
+  distanceSFXTrigger: 0.001
+  stopDelay: 0.2
   lastMoveTime: 0
   walkSFX: {fileID: 5895700348135548985}
 --- !u!114 &3480691724674233688

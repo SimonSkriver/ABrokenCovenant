@@ -13,6 +13,7 @@ public class SettingsMenuToggle : MonoBehaviour
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
     [SerializeField] private PuzzleRotater puzzleRotater;
+    private InputActionMap playerInputMap;
 
     [Header("Sensitivity settings")]
     [SerializeField] private Slider sensitivitySlider;
@@ -27,7 +28,10 @@ public class SettingsMenuToggle : MonoBehaviour
 
     void Awake()
     {
+        playerInputMap = InputSystem.actions.FindActionMap("Player");
+        playerInputMap.Enable();
         escapeAction = InputSystem.actions.FindAction("Escape");
+        
         if (escapeAction != null)
         {
             escapeAction.Enable();
