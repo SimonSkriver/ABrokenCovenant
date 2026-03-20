@@ -169,8 +169,7 @@ public class MultiBeamScript : MonoBehaviour
         {
             if (!pastLockedMirrorHits.Contains(lockedMirror))
             {
-                continue;
-              //  lockedMirror.PlayHitSFX();
+                lockedMirror.PlayHitSFX();
             }
         }
     }
