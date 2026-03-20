@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7182334b77f0f4d40bfd4ac953de844a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockedMirrorSurface
   beamEmitter: {fileID: 1256186857531369230}
-  mirrorSFXSource: {fileID: 0}
+  mirrorSFXSource: {fileID: 2317221166165006759}
 --- !u!1001 &5994337767142598554
 PrefabInstance:
   m_ObjectHideFlags: 0
