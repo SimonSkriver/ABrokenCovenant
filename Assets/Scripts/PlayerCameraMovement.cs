@@ -3,31 +3,63 @@ using UnityEngine.InputSystem;
 
 public class PlayerCameraMovement : MonoBehaviour
 {
-    [SerializeField] float mouseSensitivity = 10f;
+    [SerializeField, Range(0.05f, 1f)] float mouseSensitivity;
+    [SerializeField] private float mirrorSensitivityMultiplier = 0.25f;
     [SerializeField] Transform playerController;
 
     private float xRotation = 0f;
     private InputAction lookAction;
     
-    void Start()
+    void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         lookAction = InputSystem.actions.FindAction("Look");
+        lookAction.Enable();
+    }
+    void Start()
+    {
+        mouseSensitivity = 0.33f;
     }
 
     void Update()
     {
         if(PlayerMovement.Instance.currentState != PlayerState.LockPlayer)
         {
-            Vector2 lookValue = lookAction.ReadValue<Vector2>();
+            if(PlayerMovement.Instance.currentState != PlayerState.InPuzzle)
+            {
+                Vector2 lookValue = lookAction.ReadValue<Vector2>();
         
-            float mouseX = lookValue.x * mouseSensitivity * 10 * Time.deltaTime;
-            float mouseY = lookValue.y * mouseSensitivity * 10 * Time.deltaTime;
+                float mouseX = lookValue.x * mouseSensitivity; 
+                float mouseY = lookValue.y * mouseSensitivity; 
 
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerController.Rotate(Vector3.up * mouseX);
-        }    
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerController.Rotate(Vector3.up * mouseX);
+            }    
+            else
+            {    
+                Vector2 lookValue = lookAction.ReadValue<Vector2>();
+        
+                float mouseX = lookValue.x * mouseSensitivity * mirrorSensitivityMultiplier;
+                float mouseY = lookValue.y * mouseSensitivity * mirrorSensitivityMultiplier; 
+
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerController.Rotate(Vector3.up * mouseX);
+            }
+        }
+    }
+
+    public float GetSensitivity()
+    {
+        return mouseSensitivity;
+    }
+
+    public void SetSensitivity(float value)
+    {
+        mouseSensitivity = value;
     }
 }

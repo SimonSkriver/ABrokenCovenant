@@ -1,31 +1,46 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class ChurchDoor : MonoBehaviour, IInteractable
+public class ChurchDoor : MonoBehaviour
 {
+    [SerializeField] private InputAction escapeAction;
+    [SerializeField] private GameObject gameOverPanel;
     private Animator whiteAnimator;
     private Animator textAnimator;
 
-    void Start()
+    void Awake()
     {
-        whiteAnimator = GameObject.FindGameObjectWithTag("FadeToWhite").GetComponent<Animator>();
-        textAnimator = GameObject.FindGameObjectWithTag("Text").GetComponent<Animator>();
+        escapeAction = InputSystem.actions.FindAction("Escape");
     }
 
-    public void Interact(GameObject obj)
+    void OnTriggerEnter(Collider other)
     {
-        PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
-        whiteAnimator.SetTrigger("FadeToWhite");
-        Invoke("ShowText", 2f);
-        Debug.Log("You won");
+        if (other.CompareTag("Player"))
+        {
+            DisableEscapeButton();
+            gameOverPanel.SetActive(true);
+            whiteAnimator = GameObject.FindGameObjectWithTag("FadeToWhite").GetComponentInChildren<Animator>(true);
+            textAnimator = GameObject.FindGameObjectWithTag("Text").GetComponentInChildren<Animator>(true);
+            PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
+            whiteAnimator.SetTrigger("FadeToWhite");
+            Invoke("ShowText", 2f);
+            Debug.Log("You won");
+        }
     }
 
     void ShowText()
     {
         textAnimator.SetTrigger("ShowText");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
-    public void Drop()
+    void DisableEscapeButton()
     {
-        
+        if (escapeAction != null)
+        {
+            escapeAction.Disable();
+        }
     }
 }

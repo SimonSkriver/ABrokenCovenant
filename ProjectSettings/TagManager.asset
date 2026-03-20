@@ -11,6 +11,8 @@ TagManager:
   - Mirror
   - FadeToWhite
   - Text
+  - Canvas
+  - CrazyFog
   layers:
   - Default
   - TransparentFX

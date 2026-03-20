@@ -992,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndDoorTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3613458321122951229, guid: 6e14aa98c7fef2d40badfc3b2d4ef3bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4590860280887679824, guid: 6e14aa98c7fef2d40badfc3b2d4ef3bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.7365
@@ -1031,6 +1035,10 @@ PrefabInstance:
     - target: {fileID: 4590860280887679824, guid: 6e14aa98c7fef2d40badfc3b2d4ef3bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933405026263773769, guid: 6e14aa98c7fef2d40badfc3b2d4ef3bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
