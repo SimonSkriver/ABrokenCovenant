@@ -13,7 +13,6 @@ public class SettingsMenuToggle : MonoBehaviour
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
     [SerializeField] private PuzzleRotater puzzleRotater;
-    [SerializeField] private PlayerMovement playerMovement;
 
     [Header("Sensitivity settings")]
     [SerializeField] private Slider sensitivitySlider;
@@ -120,7 +119,7 @@ public class SettingsMenuToggle : MonoBehaviour
 
     private void DisableExternalSFXs()
     {
-        playerMovement.StopSFX();
+        PlayerMovement.Instance.StopSFX();
         if (puzzleRotater != null) puzzleRotater.StopSFX();
     }
 

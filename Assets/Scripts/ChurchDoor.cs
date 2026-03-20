@@ -18,6 +18,7 @@ public class ChurchDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerMovement.Instance.StopSFX();
             DisableEscapeButton();
             gameOverPanel.SetActive(true);
             whiteAnimator = GameObject.FindGameObjectWithTag("FadeToWhite").GetComponentInChildren<Animator>(true);
