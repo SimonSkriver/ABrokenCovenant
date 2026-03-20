@@ -17,9 +17,16 @@ public class MultiBeamScript : MonoBehaviour
     [SerializeField] private LayerMask layersToHit;
     [SerializeField] private float surfaceOffset = 0.02f;
 
-    [Header("Fog Stuff")]
-    [SerializeField] private HashSet<FogClearSurface> pastFogClearererer = new HashSet<FogClearSurface>();
-    [SerializeField] private HashSet<CrossSurface> pastCrossClearererer = new HashSet<CrossSurface>();
+    [Header("Sets")]
+    private HashSet<FogClearSurface> pastFogClearererer = new HashSet<FogClearSurface>(); // FOG
+    private HashSet<CrossSurface> pastCrossClearererer = new HashSet<CrossSurface>(); // CROSS
+    private HashSet<MirrorSurface> pastMirrorHits = new HashSet<MirrorSurface>(); // NORMAL MIRRORS
+    private HashSet<LockedMirrorSurface> pastLockedMirrorHits = new HashSet<LockedMirrorSurface>(); // LOCKED MIRRORS
+
+    private HashSet<FogClearSurface> currentFogClearererer;
+    private HashSet<CrossSurface> currentCrossClearererer;
+    private HashSet<MirrorSurface> currentMirrorHits;
+    private HashSet<LockedMirrorSurface> currentLockedMirrorHits;
 
 
     void Start()
@@ -40,8 +47,10 @@ public class MultiBeamScript : MonoBehaviour
 
     private void DrawBeam()
     {
-        HashSet<FogClearSurface> currentFogClearererer = new HashSet<FogClearSurface>();
-        HashSet<CrossSurface> currentCrossClearererer = new HashSet<CrossSurface>();
+        currentFogClearererer = new HashSet<FogClearSurface>(); //FOG
+        currentCrossClearererer = new HashSet<CrossSurface>(); // CROSS
+        currentMirrorHits = new HashSet<MirrorSurface>(); // NORMAL MIRRORS
+        currentLockedMirrorHits = new HashSet<LockedMirrorSurface>(); // LOCKED MIRRORS
 
         List<Vector3> points = new List<Vector3>();
 
@@ -85,6 +94,7 @@ public class MultiBeamScript : MonoBehaviour
                 {
                     currentDirection = Vector3.Reflect(currentDirection, hit.normal).normalized;
                     currentOrigin = hit.point + currentDirection * surfaceOffset;
+                    currentMirrorHits.Add(mirror);
                     continue;
                 }
                 
@@ -93,6 +103,7 @@ public class MultiBeamScript : MonoBehaviour
                     Transform beamEmitter = lockedMirror.GetTransform();
                     currentOrigin = beamEmitter.position; //Might get changed to hitpoint if it looks too weird
                     currentDirection = beamEmitter.forward.normalized;
+                    currentLockedMirrorHits.Add(lockedMirror);
                     continue;
                 }
 
@@ -109,6 +120,12 @@ public class MultiBeamScript : MonoBehaviour
             }
         }
 
+        //Play sound effect on new mirrors hit
+        PlaySFXOnNewMirrorHits();
+
+        pastMirrorHits = new HashSet<MirrorSurface>(currentMirrorHits);
+        pastLockedMirrorHits = new HashSet<LockedMirrorSurface>(currentLockedMirrorHits);
+
         //Fog enabler if sunbeam has left mirror
         foreach (FogClearSurface fogScript in pastFogClearererer)
         {
@@ -117,7 +134,7 @@ public class MultiBeamScript : MonoBehaviour
                 fogScript.EnableParticles();
             }
         }
-        pastFogClearererer = currentFogClearererer;
+        pastFogClearererer = new HashSet<FogClearSurface>(currentFogClearererer);
 
         foreach (CrossSurface crossScript in pastCrossClearererer)
         {
@@ -126,8 +143,7 @@ public class MultiBeamScript : MonoBehaviour
                 crossScript.CrossAction();
             }
         }
-        pastCrossClearererer = currentCrossClearererer;
-
+        pastCrossClearererer = new HashSet<CrossSurface>(currentCrossClearererer);
 
         if (tubeRenderer != null)
         {
@@ -136,6 +152,27 @@ public class MultiBeamScript : MonoBehaviour
 
         //lineRenderer.positionCount = points.Count;
         //lineRenderer.SetPositions(points.ToArray());
+    }
+
+
+    private void PlaySFXOnNewMirrorHits()
+    {
+        foreach (MirrorSurface mirror in currentMirrorHits)
+        {
+            if (!pastMirrorHits.Contains(mirror))
+            {
+                mirror.PlayHitSFX();
+            }
+        }
+
+        foreach (LockedMirrorSurface lockedMirror in currentLockedMirrorHits)
+        {
+            if (!pastLockedMirrorHits.Contains(lockedMirror))
+            {
+                continue;
+              //  lockedMirror.PlayHitSFX();
+            }
+        }
     }
 
 

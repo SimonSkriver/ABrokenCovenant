@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MirrorSurface : MonoBehaviour
 {
+    [SerializeField] private AudioSource mirrorSFXSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +13,13 @@ public class MirrorSurface : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayHitSFX()
+    {
+        if (mirrorSFXSource != null && !mirrorSFXSource.isPlaying)
+        {
+        mirrorSFXSource.Play();   
+        }
     }
 }
