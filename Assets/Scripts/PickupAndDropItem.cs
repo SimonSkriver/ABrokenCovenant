@@ -5,15 +5,26 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
     private Transform hands;
     public GameObject heldObject;
 
+    [SerializeField] AudioSource itemSFX;
+    [SerializeField] bool shouldIMakeNoise;
+
     void Awake()
     {
         hands = GameObject.FindGameObjectWithTag("Hands").transform;
+
+        if (itemSFX != null && shouldIMakeNoise)
+        {
+            itemSFX.Play();
+        }
     }
 
     public void Interact(GameObject obj)
     {
         PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
         heldObject = obj;
+
+        //Stop idle sfx
+        StopOrStartItemSFX();
 
         //Disable physics, colliders and parent to hands
         heldObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -30,6 +41,9 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
         //Find Transform of held object
         Transform obj = heldObject.GetComponent<Transform>();
 
+        //Start idle sfx again
+        StopOrStartItemSFX();
+
         //Re-enable properties
         obj.transform.parent = null;
         obj.GetComponent<Rigidbody>().isKinematic = false;
@@ -39,5 +53,20 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
         obj.localRotation = Quaternion.identity;
         heldObject = null;
         PlayerMovement.Instance.currentState = PlayerState.Normal;
+    }
+
+    public void StopOrStartItemSFX()
+    {
+        if (itemSFX != null && shouldIMakeNoise)
+        {
+            if (itemSFX.isPlaying)
+            {
+                itemSFX.Stop();
+            }
+            else
+            {
+                itemSFX.Play();
+            }
+        }
     }
 }
