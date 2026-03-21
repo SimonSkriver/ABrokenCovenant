@@ -44,6 +44,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 454221718fbe7354c8f5cd7231f70d8e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Parallax_Map:
+        m_Texture: {fileID: 2800000, guid: f41061878cdba5f4f821137662d43cae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Roughness_Map:
         m_Texture: {fileID: 2800000, guid: bc4ada741e4182d41a31b2f0ce3e7a72, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -80,10 +84,14 @@ Material:
     - _Noise_Blend: 1
     - _Noise_Scale: 100
     - _Outer_Edge: -3.8
+    - _Parallax_Depth: -5
+    - _Parallax_Steps: 5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Multiplier: 3.5
     - _UV_Rotation: 0
+    - _UseEdgeMask: 1
+    - _UseGrungeMap: 1
     - _Use_Alpha_Map: 1
     - _Wind_Scale: 1
     - _Wind_Speed: 0.5

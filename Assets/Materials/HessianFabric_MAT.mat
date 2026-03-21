@@ -88,6 +88,8 @@ Material:
     - _QueueOffset: 0
     - _Roughness_Multiplier: 2.2
     - _UV_Rotation: 0
+    - _UseEdgeMask: 1
+    - _UseGrungeMap: 1
     - _Wind_Scale: 0.2
     - _Wind_Speed: 2
     m_Colors:
