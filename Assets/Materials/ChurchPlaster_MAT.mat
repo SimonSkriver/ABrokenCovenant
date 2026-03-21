@@ -33,7 +33,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _Parallax_Steps
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -55,6 +55,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
         m_Texture: {fileID: 2800000, guid: 59d306a66d5d6db4e9c06fbef92b64ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Parallax_Map:
+        m_Texture: {fileID: 2800000, guid: a9e355b905a6c854d9213142d3573f15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness_Map:
@@ -87,12 +91,14 @@ Material:
     - _Contrast: 1
     - _Diffuse_Saturation: 0.5
     - _Grunge_Rotation: 0
-    - _Grunge_Scale: 20
-    - _Inner_Edge: -36.4
+    - _Grunge_Scale: 3.7
+    - _Inner_Edge: -45.1
     - _Metallic_Multiplier: 0
-    - _Noise_Blend: 1
-    - _Noise_Scale: 200
+    - _Noise_Blend: 3.2
+    - _Noise_Scale: 92.68
     - _Outer_Edge: 13.9
+    - _Parallax_Depth: -5
+    - _Parallax_Steps: 5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Multiplier: 3
