@@ -6,6 +6,7 @@ public class FogClearSurface : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject particleParent;
     [SerializeField] private GameObject fogCollider;
+    [SerializeField] private GameObject fogEffect;
     [SerializeField] private ParticleSystem[] particleSystems;
     void Start()
     {
@@ -21,6 +22,7 @@ public class FogClearSurface : MonoBehaviour
             particle.Play(true);
         }
         fogCollider.SetActive(true);
+        fogEffect.SetActive(true);
     }
 
     public void DisableParticles()
@@ -31,5 +33,6 @@ public class FogClearSurface : MonoBehaviour
             main.loop = false;
         }
         fogCollider.SetActive(false);
+        fogEffect.SetActive(false);
     }
 }
