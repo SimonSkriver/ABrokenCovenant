@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrainEffect
   counter: 0
-  maxTime: 10
+  maxTime: 7
   playerIsHere: 0
 --- !u!65 &863849157412544859
 BoxCollider:
