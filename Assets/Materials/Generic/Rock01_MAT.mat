@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5314776463370650312
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PineBark_MAT
+  m_Name: Rock01_MAT
   m_Shader: {fileID: -6465566751694194690, guid: c209f6349f1acec40bf9d6cf41794656, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,12 +37,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Alpha_Map:
+        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Diffuse_Map:
-        m_Texture: {fileID: 2800000, guid: fa077778dd93e0c4aab175864186ee92, type: 3}
+        m_Texture: {fileID: 2800000, guid: 254cf19e9e5b8414c90a07d2cdc3a4db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Grunge_Map:
-        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 197ca27190a27ab4c8a0e8a6470aaf43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Map:
@@ -37,19 +54,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Map:
-        m_Texture: {fileID: 2800000, guid: afd04c9edddafd747acce78287c3d9f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 345f0cdeb702c0d45804647191dc9f93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Parallax_Map:
-        m_Texture: {fileID: 2800000, guid: 30435a391ca7eed4c818e94dec8b7d1b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34398da448fcd3b4288c67c3be33d0f5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Roughness_Map:
-        m_Texture: {fileID: 2800000, guid: a97c5e56174784c49b43fb2a5ceca7ee, type: 3}
+        m_Texture: {fileID: 2800000, guid: 93aad7734c0267e4abb311fa8f49905b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_2c8d8f71c9bf4003a327681f84f26367_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 3d337c20cbbaf834b8919315a2819df4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4a129e28cb5d4075aa3bcc43ca0ac9ee_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: aa720d0bd20902e47ad36a7199bef81f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -68,41 +89,32 @@ Material:
     m_Floats:
     - _Apply_wind: 0
     - _Contrast: 1
-    - _Diffuse_Saturation: 0.7
+    - _Diffuse_Saturation: 0.5
     - _Grunge_Rotation: 0
-    - _Grunge_Scale: 6.58
-    - _Inner_Edge: 0.5
+    - _Grunge_Scale: 3.7
+    - _Inner_Edge: -45.1
     - _Metallic_Multiplier: 0
-    - _Noise_Blend: 1
-    - _Noise_Scale: 42.15
-    - _Outer_Edge: -2
+    - _Noise_Blend: 3.2
+    - _Noise_Scale: 92.68
+    - _Outer_Edge: 13.9
     - _Parallax_Depth: 0
     - _Parallax_Steps: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Contrast: 1
-    - _Roughness_Multiplier: 2.5
+    - _Roughness_Multiplier: 3
     - _UV_Rotation: 0
     - _UseEdgeMask: 1
+    - _UseGrungeMap: 1
+    - _Use_Alpha_Map: 0
     - _Wind_Scale: 1
     - _Wind_Speed: 0.5
     m_Colors:
-    - _Diffuse_Tint: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+    - _Diffuse_Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Grunge_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Grunge_Tiling: {r: 1, g: 0.5, b: 0, a: 0}
     - _Grunge_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _UV_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _UV_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _UV_Tiling: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &5090564432130598751
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10
