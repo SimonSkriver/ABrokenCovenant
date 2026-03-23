@@ -14,83 +14,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bar
-    second: {fileID: 2100000, guid: 32f41564a06ae0e4ab5d9ce6e84a4d39, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair
-    second: {fileID: 2100000, guid: 9246b689696f34c4cb80a2bc4b687b29, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: concrete
-    second: {fileID: 2100000, guid: 7be010ed7a9ffcc44a603b02f9a558be, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: doors
-    second: {fileID: 2100000, guid: b6f27332641cd5641be207d690fe42fb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: firewood
-    second: {fileID: 2100000, guid: c8e715c392f03ac46823c33b390ce714, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: floor
-    second: {fileID: 2100000, guid: e44d0313acf2166449b3b0bcf1ab9899, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: glass
-    second: {fileID: 2100000, guid: 86d8fb9424eaa084cb67d6ceabfc7312, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: interior_roof
-    second: {fileID: 2100000, guid: 4da57cdc9b6481140b17d62947c8b83d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: labels
     second: {fileID: 2100000, guid: ff90241a70bc9b34f852dfca9df416e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: metals
-    second: {fileID: 2100000, guid: 986552f34ad2cc348ada41042b0a397c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: outside_props
     second: {fileID: 2100000, guid: c3c0460a5e9a9904888abed6b542a293, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rock1
-    second: {fileID: 2100000, guid: 376e6a43a0796f64fbd6e89b2471f910, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rock2
-    second: {fileID: 2100000, guid: c1d994ba448f2114b99342efd4268e87, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: roof
-    second: {fileID: 2100000, guid: e199c7bfeecc9ab4c9ecca38d7e6359f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shelf
-    second: {fileID: 2100000, guid: c41b8c541fbe84b48a014bfb105a650b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: stool
-    second: {fileID: 2100000, guid: 9361181531b46ba4a8ef3964d1bec97e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -101,21 +31,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: wheelbarrow
     second: {fileID: 2100000, guid: 3a4e345506aaa7d46b98c1985d9a489e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood1
-    second: {fileID: 2100000, guid: a86ebab517944ac43aaad6d830362db2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood2
-    second: {fileID: 2100000, guid: b942e3d8baa12624882d5147ee2aff92, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood3
-    second: {fileID: 2100000, guid: 831af056b9826094084f35f8ac924158, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
