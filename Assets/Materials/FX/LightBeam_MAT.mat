@@ -52,6 +52,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0
+    - _Fine_Detail: 2
     - _Float: 1
     - _Intensity: 2
     - _QueueControl: 0
@@ -60,5 +61,6 @@ Material:
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 2.9960783, g: 2.9387171, b: 1.3708471, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
