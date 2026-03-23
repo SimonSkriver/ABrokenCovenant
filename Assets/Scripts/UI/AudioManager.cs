@@ -7,7 +7,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Volume Settings")]
     [SerializeField] private AudioMixer audioMixer;
-   // [SerializeField] private AudioMixerGroup[] musicMixer CANN BE ADDED WITH FOREACH FUNCTION IF WE START ADDING SUBGROUPS
     [Range(-20f, 20f)] public float masterVolume;
     [Range(-20f, 20f)] public float musicVolume;
     [Range(-20f, 20f)] public float sfxVolume;
@@ -23,12 +22,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void Start()
-    {
-        
-    }
-
+    
     public void SetMasterVolume(float value)
     {
         masterVolume = value;
@@ -52,13 +46,6 @@ public class AudioManager : MonoBehaviour
         foreach (var group in groups)
         {
             Debug.Log(group);
-           // audioMixer.SetFloat(group, volume);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

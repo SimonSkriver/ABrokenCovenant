@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] float movementSpeed = 3f;
     [SerializeField] float jumpHeight = 3f;
-
     [SerializeField] float gravity = -9.81f;
     private Vector3 velocity;
 
@@ -66,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if (controller.isGrounded && jumpAction.IsPressed())
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //fiddle with jump so that it's less floaty. Needs to jump faster without jumping higher
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
         //Keep player grounded, by forcing slight negative downward velocity
         if(controller.isGrounded && velocity.y < 0)

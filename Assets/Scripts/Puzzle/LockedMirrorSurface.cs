@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class LockedMirrorSurface : MonoBehaviour
@@ -15,7 +14,7 @@ public class LockedMirrorSurface : MonoBehaviour
     {
         if (mirrorSFXSource != null && !mirrorSFXSource.isPlaying)
         {
-        mirrorSFXSource.Play();   
+            mirrorSFXSource.Play();   
         }
     }
 }

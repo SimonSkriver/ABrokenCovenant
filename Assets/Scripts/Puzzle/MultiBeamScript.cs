@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System;
 
 public class MultiBeamScript : MonoBehaviour
 {
@@ -101,14 +100,11 @@ public class MultiBeamScript : MonoBehaviour
                 if (lockedMirror != null)
                 {
                     Transform beamEmitter = lockedMirror.GetTransform();
-                    currentOrigin = beamEmitter.position; //Might get changed to hitpoint if it looks too weird
+                    currentOrigin = beamEmitter.position;
                     currentDirection = beamEmitter.forward.normalized;
                     currentLockedMirrorHits.Add(lockedMirror);
                     continue;
                 }
-
-                
-
             }
             else
             {
@@ -149,11 +145,7 @@ public class MultiBeamScript : MonoBehaviour
         {
           tubeRenderer.SetPositions(points.ToArray()); 
         }
-
-        //lineRenderer.positionCount = points.Count;
-        //lineRenderer.SetPositions(points.ToArray());
     }
-
 
     private void PlaySFXOnNewMirrorHits()
     {
@@ -173,6 +165,4 @@ public class MultiBeamScript : MonoBehaviour
             }
         }
     }
-
-
 }

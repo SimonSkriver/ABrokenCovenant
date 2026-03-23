@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -9,7 +8,6 @@ public class SettingsMenuToggle : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject volumeSettingsPanel;
     [SerializeField] private GameObject mouseSensPanel;
-    //[SerializeField] private GameObject buttonSettings;
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
     [SerializeField] private PuzzleRotater puzzleRotater;
@@ -42,6 +40,7 @@ public class SettingsMenuToggle : MonoBehaviour
             sensitivitySlider.value = playerCameraMovement.GetSensitivity();
         }
     }
+
     public void ShowAndHidePauseScreen()
     {
         if(!escapeMenuShown) 
@@ -51,7 +50,6 @@ public class SettingsMenuToggle : MonoBehaviour
             savedPlayerState = PlayerMovement.Instance.currentState;
             PlayerMovement.Instance.currentState = PlayerState.LockPlayer;
             pausePanel.SetActive(true);
-            //buttonSettings.SetActive(false);
             Time.timeScale = 0f;
             escapeMenuShown = true;
             mouseSensPanel.SetActive(true);

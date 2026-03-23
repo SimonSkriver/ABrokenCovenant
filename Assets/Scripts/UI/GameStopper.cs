@@ -1,11 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ChurchDoor : MonoBehaviour
+public class GameStopper : MonoBehaviour
 {
-    [SerializeField] private InputAction escapeAction;
-    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] InputAction escapeAction;
+    [SerializeField] GameObject gameOverPanel;
     private Animator whiteAnimator;
     private Animator textAnimator;
 

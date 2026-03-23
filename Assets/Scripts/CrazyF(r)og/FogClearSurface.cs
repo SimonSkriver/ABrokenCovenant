@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class FogClearSurface : MonoBehaviour
@@ -8,6 +7,7 @@ public class FogClearSurface : MonoBehaviour
     [SerializeField] private GameObject fogCollider;
     [SerializeField] private GameObject fogEffect;
     [SerializeField] private ParticleSystem[] particleSystems;
+
     void Start()
     {
         particleSystems = particleParent.GetComponentsInChildren<ParticleSystem>();
@@ -21,6 +21,7 @@ public class FogClearSurface : MonoBehaviour
             main.loop = true;
             particle.Play(true);
         }
+
         fogCollider.SetActive(true);
         fogEffect.SetActive(true);
     }
@@ -32,6 +33,7 @@ public class FogClearSurface : MonoBehaviour
             var main = particle.main;
             main.loop = false;
         }
+
         fogCollider.SetActive(false);
         fogEffect.SetActive(false);
     }

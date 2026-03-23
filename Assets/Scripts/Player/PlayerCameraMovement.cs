@@ -17,6 +17,7 @@ public class PlayerCameraMovement : MonoBehaviour
         lookAction = InputSystem.actions.FindAction("Look");
         lookAction.Enable();
     }
+    
     void Start()
     {
         mouseSensitivity = 0.33f;

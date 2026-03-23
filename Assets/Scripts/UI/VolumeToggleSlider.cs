@@ -7,7 +7,6 @@ public class VolumeToggleSlider : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (AudioManager.Instance != null)
@@ -40,12 +39,5 @@ public class VolumeToggleSlider : MonoBehaviour
         {
             AudioManager.Instance.SetSFXVolume(value);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

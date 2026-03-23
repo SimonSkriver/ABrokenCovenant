@@ -12,7 +12,7 @@ public class CrossSurface : MonoBehaviour
     [SerializeField] GameObject newLightBeam; //ONLY IF NEW LIGHT ACTIVATOR CROSS
     [SerializeField] Animator churchAnimator;
 
-public void CrossAction()
+    public void CrossAction()
     {
         if (crossKind == CrossKind.NewLightCross)
         {
@@ -45,4 +45,3 @@ public void CrossAction()
         }
     }
 }
-
