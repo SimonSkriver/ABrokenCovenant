@@ -24,14 +24,20 @@ public class RandomHouseChatter : MonoBehaviour
 
     IEnumerator PlaySFX()
     {
-        if (InternalPlayerWhisper.Instance.internalWhisperSource.isPlaying)
+        if (InternalPlayerWhisper.Instance != null && InternalPlayerWhisper.Instance.internalWhisperSource != null)
         {
-            yield return new WaitForSeconds(InternalPlayerWhisper.Instance.internalWhisperSource.clip.length);
+          if (InternalPlayerWhisper.Instance.internalWhisperSource.isPlaying)
+            {
+            yield return new WaitForSeconds(InternalPlayerWhisper.Instance.currentInternalWhisperLength);
+            }
+
+            InternalPlayerWhisper.Instance.isHearingHouseChatter = true;
+            whisperSFX.Play();
+            sfxHasPlayed = true;
+
+            yield return new WaitForSeconds(whisperSFX.clip.length);
+            InternalPlayerWhisper.Instance.isHearingHouseChatter = false;  
         }
-        InternalPlayerWhisper.Instance.isHearingHouseChatter = true;
-        InternalPlayerWhisper.Instance.houseChatterSFXlength = whisperSFX.clip.length;
-        whisperSFX.Play();
-        sfxHasPlayed = true;
-        InternalPlayerWhisper.Instance.isHearingHouseChatter = false;
+        
     }
 }

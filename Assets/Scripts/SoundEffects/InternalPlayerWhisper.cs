@@ -9,9 +9,16 @@ public class InternalPlayerWhisper : MonoBehaviour
 
     public AudioSource internalWhisperSource {get; private set; }
     public bool isHearingHouseChatter {get; set;}
-    public float houseChatterSFXlength {get; set; }
+
+
+    //Keeps track of the current whisper length to use in RandomHouseChatter
+    public float currentInternalWhisperLength {get; private set; }
+
     [SerializeField] private float timer;
     [SerializeField] private float timeForNextSFX;
+    [SerializeField] private bool isPlayingSFX;
+    [SerializeField] private float minDelay = 500f;
+    [SerializeField] private float maxDelay = 1000f;
     [SerializeField] private int insanityLevel = 1;
     [SerializeField] private int nextVoiceClipToPlay = 0;
     [SerializeField] private List<AudioClip> level1AudioClips = new List<AudioClip>();
@@ -23,6 +30,10 @@ public class InternalPlayerWhisper : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
         timeForNextSFX = 60;
@@ -41,10 +52,14 @@ public class InternalPlayerWhisper : MonoBehaviour
 
         UpdateInsanityLevel ();
 
-        if (timer > timeForNextSFX) 
+    if (internalWhisperSource != null)
         {
+        if (!isPlayingSFX && timer > timeForNextSFX) 
+            {
             PlaySFXByInsanityLevel();
+            }
         }
+        
     }
     void UpdateInsanityLevel()
     {
@@ -84,20 +99,28 @@ public class InternalPlayerWhisper : MonoBehaviour
 
     IEnumerator PlayNextSFX(List<AudioClip> audioClips)
     {
-        if (nextVoiceClipToPlay <= audioClips.Count) 
+        isPlayingSFX = true;
+        while (isHearingHouseChatter) //Safety check to not hear double voices if you're currently hearing voices coming from a house
         {
-        AudioClip clipToPlay = audioClips[nextVoiceClipToPlay];
-
-        if (isHearingHouseChatter) //Safety check to not hear double voices if you're currently hearing voices coming from a house
-            {
-            yield return new WaitForSeconds(houseChatterSFXlength); //if you are wait for that sound effect to finish playing
-            }
-
-        internalWhisperSource.PlayOneShot(clipToPlay);
-        if (nextVoiceClipToPlay != audioClips.Count) nextVoiceClipToPlay ++;
-        timeForNextSFX = timer += UnityEngine.Random.Range(30f, 150f);
+            yield return null; //if you are wait for that sound effect to finish playing
         }
+
+            if (nextVoiceClipToPlay < audioClips.Count) //Check that we didnt go out of bounds
+            {
+                AudioClip clipToPlay = audioClips[nextVoiceClipToPlay];
+
+                if (clipToPlay != null)
+                {
+                currentInternalWhisperLength = clipToPlay.length;
+                internalWhisperSource.PlayOneShot(clipToPlay);
+                yield return new WaitForSeconds(clipToPlay.length);
+                nextVoiceClipToPlay++;
+                }
+            }
+        if (nextVoiceClipToPlay >= audioClips.Count) nextVoiceClipToPlay = 0; //Go back to first audioclip if we reached the last one in the list
+
+        timeForNextSFX = timer + UnityEngine.Random.Range(minDelay, maxDelay);
+        isPlayingSFX = false;
     }
-    
 }
 
