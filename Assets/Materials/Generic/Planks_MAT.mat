@@ -28,7 +28,7 @@ Material:
     m_Floats:
     - _Grunge_Scale: 2
     - _Noise_Blend: 2
-    - _Parallax_Depth: -1
+    - _Parallax_Depth: -0.2
     - _UseGrungeMap: 1
     m_Colors:
     - _Diffuse_Tint: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
