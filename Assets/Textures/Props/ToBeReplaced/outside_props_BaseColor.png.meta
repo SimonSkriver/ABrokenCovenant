@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: baee55ead50146e489a794f065cdc86f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189324
+  packageName: Medieval house modular full v2.0 - URP
+  packageVersion: 2.0
+  assetPath: Assets/Medieval_House/Textures/outside props/outside_props_BaseColor.png
+  uploadId: 787218
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -89,7 +96,7 @@ TextureImporter:
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -103,6 +110,19 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -120,16 +140,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 189324
-  packageName: Medieval house modular full v2.0 - URP
-  packageVersion: 2.0
-  assetPath: Assets/Medieval_House/Textures/outside props/outside_props_BaseColor.png
-  uploadId: 787218
