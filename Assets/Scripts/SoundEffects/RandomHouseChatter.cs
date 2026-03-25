@@ -18,26 +18,8 @@ public class RandomHouseChatter : MonoBehaviour
     {
         if (whisperSFX != null && !sfxHasPlayed)
         {
-            StartCoroutine(PlaySFX());
-        }
-    }
-
-    IEnumerator PlaySFX()
-    {
-        if (InternalPlayerWhisper.Instance != null && InternalPlayerWhisper.Instance.internalWhisperSource != null)
-        {
-          if (InternalPlayerWhisper.Instance.internalWhisperSource.isPlaying)
-            {
-            yield return new WaitForSeconds(InternalPlayerWhisper.Instance.currentInternalWhisperLength);
-            }
-
-            InternalPlayerWhisper.Instance.isHearingHouseChatter = true;
             whisperSFX.Play();
             sfxHasPlayed = true;
-
-            yield return new WaitForSeconds(whisperSFX.clip.length);
-            InternalPlayerWhisper.Instance.isHearingHouseChatter = false;  
         }
-        
     }
 }
