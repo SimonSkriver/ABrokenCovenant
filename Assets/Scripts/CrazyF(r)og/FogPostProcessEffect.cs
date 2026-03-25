@@ -26,7 +26,7 @@ public class FogPostProcessEffect : MonoBehaviour
     [SerializeField] private float chromaticAbIntensityMax = 1f;
     private ChromaticAberration chromaticAberration;
 
-    [SerializeField] private bool effectsShouldPlay = true;
+    [SerializeField] private bool effectsShouldPlay;
 
     void Start()
     {
