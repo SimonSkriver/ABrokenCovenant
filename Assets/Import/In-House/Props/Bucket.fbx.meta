@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: 779c3967fca09614bb2a2b75c7e4a109
+guid: d893cd2925a1bac429b27757c2249121
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Handcart
-    second: {fileID: 2100000, guid: 65c30064b3f24ec4e99e827875fb74e4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Handcart_Barrel
-    second: {fileID: 2100000, guid: 0990310b02821194abe0bc0a5307001f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Handcart_Rope
-    second: {fileID: 2100000, guid: 9356f583545f31c409ceb51b01a9bf0b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wheel_Shaft
-    second: {fileID: 2100000, guid: b1e1e275d9af49c46b52f87166817406, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,8 +16,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -78,6 +56,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -127,10 +108,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 294298
-  packageName: RPG Medieval Props Pack 01
-  packageVersion: 1.0
-  assetPath: Assets/Medieval Props Pack 01/Universal Render Pipeline(URP)/Meshes/Handcart.fbx
-  uploadId: 695614
