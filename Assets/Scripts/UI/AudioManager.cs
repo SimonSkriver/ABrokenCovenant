@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager Instance; // static Instance to access easily from other scripts.
 
     [Header("Volume Settings")]
     [SerializeField] private AudioMixer audioMixer;
@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        // Make the static instance a singleton, to ensure only one Instance of AudioManager exists
         if (Instance == null)
         {
             Instance = this;
@@ -22,7 +23,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+    // Methods to set the different mixer groups volumes
     public void SetMasterVolume(float value)
     {
         masterVolume = value;
@@ -39,13 +40,5 @@ public class AudioManager : MonoBehaviour
     {
         sfxVolume = value;
         audioMixer.SetFloat("SFXVolume", sfxVolume);
-    }
-    
-    public void UpdateVolumeGroup(AudioMixerGroup[] groups, float volume)
-    {
-        foreach (var group in groups)
-        {
-            Debug.Log(group);
-        }
     }
 }
