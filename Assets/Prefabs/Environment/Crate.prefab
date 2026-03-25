@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bc8d2a6e281452845a74abeec2af77e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 895.2655
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc8d2a6e281452845a74abeec2af77e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.704502
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc8d2a6e281452845a74abeec2af77e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1113.6511
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc8d2a6e281452845a74abeec2af77e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d6d0b470229686548818223d67a25203, type: 2}
     - target: {fileID: 919132149155446097, guid: bc8d2a6e281452845a74abeec2af77e5, type: 3}
       propertyPath: m_Name
-      value: Crate2
+      value: Crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
