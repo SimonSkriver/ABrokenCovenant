@@ -30,7 +30,7 @@ public class FogClearSurface : MonoBehaviour
 
     public void DisableParticles()
     {
-        //Disable loop
+        // Disable loop
         foreach (ParticleSystem particle in particleSystems)
         {
             var main = particle.main;

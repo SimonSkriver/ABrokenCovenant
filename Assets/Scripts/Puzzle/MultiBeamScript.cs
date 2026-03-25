@@ -17,12 +17,13 @@ public class MultiBeamScript : MonoBehaviour
     [SerializeField] private float surfaceOffset = 0.02f;
 
     [Header("Sets")] // Used to check if new mirrors are hit or if beam has moved away from mirrors again.
+    // Lists of surfaces hit in the previous iteration of the for loop in DrawBeam, afterwards gets updated with current hits
     private HashSet<FogClearSurface> pastFogClearererer = new HashSet<FogClearSurface>(); // FOG
     private HashSet<CrossSurface> pastCrossClearererer = new HashSet<CrossSurface>(); // CROSS
     private HashSet<MirrorSurface> pastMirrorHits = new HashSet<MirrorSurface>(); // NORMAL MIRRORS
     private HashSet<LockedMirrorSurface> pastLockedMirrorHits = new HashSet<LockedMirrorSurface>(); // LOCKED MIRRORS
 
-    // Currently hit mirrors which are constantly being replaced/updated in drawbeam
+    // Lists of currents hits by the raycast in the for loop in drawbeam
     private HashSet<FogClearSurface> currentFogClearererer;
     private HashSet<CrossSurface> currentCrossClearererer;
     private HashSet<MirrorSurface> currentMirrorHits;
@@ -44,6 +45,7 @@ public class MultiBeamScript : MonoBehaviour
 
     void Update()
     {
+        // Constantly drawbeam to make sure beam reflection is smooth and hit effects instant
         DrawBeam();
     }
 
