@@ -15,14 +15,17 @@ public class FogPostProcessEffect : MonoBehaviour
     [SerializeField] private float heartbeatMax = 1f;
 
     [Header ("Vignette")]
+    [SerializeField] private float vignetteMin = 0.05f;
     [SerializeField] private float vignetteMax = 1f;
     private Vignette vignette;
 
     [Header ("Film Grain")]
+    [SerializeField] private float filmGrainIntensityMin = 0.1f;
     [SerializeField] private float filmGrainIntensityMax = 1f;
     private FilmGrain filmGrain;
     
     [Header ("Chromatic aberration")]
+    [SerializeField] private float chromaticAbIntensityMin = 0f;
     [SerializeField] private float chromaticAbIntensityMax = 1f;
     private ChromaticAberration chromaticAberration;
 
@@ -48,9 +51,9 @@ public class FogPostProcessEffect : MonoBehaviour
         if (effectsShouldPlay) 
         {
             if (heartbeatSFX != null) heartbeatSFX.volume = Mathf.Lerp(0, heartbeatMax, t);
-            vignette.intensity.value = Mathf.Lerp(0, vignetteMax, t);
-            filmGrain.intensity.value = Mathf.Lerp(0, filmGrainIntensityMax, t);
-            chromaticAberration.intensity.value = Mathf.Lerp(0, chromaticAbIntensityMax, t);
+            vignette.intensity.value = Mathf.Lerp(vignetteMin, vignetteMax, t);
+            filmGrain.intensity.value = Mathf.Lerp(filmGrainIntensityMin, filmGrainIntensityMax, t);
+            chromaticAberration.intensity.value = Mathf.Lerp(chromaticAbIntensityMin, chromaticAbIntensityMax, t);
         }
     }
 }
