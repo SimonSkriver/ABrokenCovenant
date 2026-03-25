@@ -1,6 +1,7 @@
 using UnityEngine;
 public enum CrossKind
 {
+    // Ended up not needed as we removed the light beam split
    NewLightCross,
    FinalChurchCross
 }
@@ -9,20 +10,26 @@ public class CrossSurface : MonoBehaviour
 {
     [SerializeField] CrossKind crossKind; 
     [SerializeField] bool isBeingHit = false;
-    [SerializeField] GameObject newLightBeam; //ONLY IF NEW LIGHT ACTIVATOR CROSS
-    [SerializeField] Animator churchAnimator;
+    [SerializeField] GameObject newLightBeam; // ONLY NEEDED IF NEW LIGHT ACTIVATOR CROSS
+    [SerializeField] Animator churchAnimator; // ONLY NEEDED FOR FINAL CROSS
 
     public void CrossAction()
     {
-        if (crossKind == CrossKind.NewLightCross)
+        // UNUSED but easy to add to game if wanted
+        if (crossKind == CrossKind.NewLightCross) 
         {
-            if (!isBeingHit) 
+            // Check if currently being hit by a light beam
+            if (!isBeingHit)
             {
+            // Active the new light beam GameObject
             newLightBeam.SetActive(true);
             isBeingHit = true;
             }
+
+            // If action is called called again while isBeingHit is true, its because you moved the beam away from the cross
             else
             {
+                // Disable light beam
                 newLightBeam.SetActive(false);
                 isBeingHit = false;
             }
@@ -30,16 +37,17 @@ public class CrossSurface : MonoBehaviour
 
         if (crossKind == CrossKind.FinalChurchCross)
         {
+            // If not currently being hit by light beam
             if (!isBeingHit)
             {
-                churchAnimator.SetBool("CrossHit", true);
+                // Open church door
+                churchAnimator.SetBool("CrossHit", true); 
                 isBeingHit = true;
-                
             }
             else
             {
-                //this results in a flip/flop. So hitting the cross the first time opens the door. Hitting it again closes it. Thus I've left it out, so it only opens once.
-                //churchAnimator.SetBool("CrossHit", false);
+                // Had some jankiness so removed close animation, once you've hit the final cross, once, the door opens.
+                // churchAnimator.SetBool("CrossHit", false);
                 isBeingHit = false;
             }
         }
