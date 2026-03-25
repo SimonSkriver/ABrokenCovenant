@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: StoneBricksSplitface001_2K
-    second: {fileID: 2100000, guid: f43d7606b5f5c43519ca669b3e27c143, type: 2}
+    second: {fileID: 2100000, guid: 25e3142137ba94d22a00aac00836b88e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
