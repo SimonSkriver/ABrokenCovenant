@@ -7,15 +7,15 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Demolished_Tiles_2
-  m_DiffuseTexture: {fileID: 2800000, guid: 7eb7673298c59c04f8817bcaca7ba136, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: c8e93de9824d70546bf58cd4353ce9d5, type: 3}
-  m_MaskMapTexture: {fileID: 2800000, guid: 0a0c8a89ea519214c8045fcc9e12e738, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 727515523dc93474cbb7746cd5f412a7, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 1f5643fc3ad48b0408e5b98eb3bdbd83, type: 3}
+  m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 1, y: 1}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
   m_Smoothness: 0
-  m_NormalScale: 3
+  m_NormalScale: 2
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}
   m_MaskMapRemapMin: {x: 0, y: 0, z: 0, w: 0}
