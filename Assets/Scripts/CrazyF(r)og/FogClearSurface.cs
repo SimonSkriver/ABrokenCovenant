@@ -4,7 +4,7 @@ public class FogClearSurface : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject particleParent; // Set CrazyFogParticle GameObject in Inspector
-    [SerializeField] private GameObject fogCollider;
+    [SerializeField] private GameObject fogCollider; 
     [SerializeField] private GameObject fogEffect; // Set CrazyFogEffect parent GameObject in Inspector
     [SerializeField] private ParticleSystem[] particleSystems;
 

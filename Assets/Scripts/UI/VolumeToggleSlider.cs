@@ -6,9 +6,11 @@ public class VolumeToggleSlider : MonoBehaviour
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private SettingsMenuToggle settingsMenu;
     
     void Start()
     {
+        // Ensure that the sliders positions are correct according to the volumes in AudioManager
         if (AudioManager.Instance != null)
         {
             masterSlider.value = AudioManager.Instance.masterVolume;
@@ -17,11 +19,13 @@ public class VolumeToggleSlider : MonoBehaviour
         }
     }
 
+    // All 3 Canvas sliders has the On Value Changed set to the according method with dynamic float as input
     public void OnMasterSliderChanged(float value)
     {
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.SetMasterVolume(value);
+            settingsMenu.SetSavedMasterVolume(value);
         }
     }
 
