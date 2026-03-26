@@ -33,6 +33,7 @@ public class FogPostProcessEffect : MonoBehaviour
 
     void Start()
     {
+        //TryGet the three different effects and save them in their respectiv variables
         volume.TryGet(out vignette);
         volume.TryGet(out filmGrain);
         volume.TryGet(out chromaticAberration);
@@ -40,16 +41,19 @@ public class FogPostProcessEffect : MonoBehaviour
 
     void Update()
     {
+        //Normalize the counter since post process effects have a value of 0-1
         float t = drainZone.counter/drainZone.maxTime;
+        //Check if sfx should be playing
         if (t > 0) effectsShouldPlay = true;
-        HandleEffects(t);
         if (t == 0) effectsShouldPlay = false;
+        HandleEffects(t);
     }
 
     void HandleEffects(float t)
     {   
         if (effectsShouldPlay) 
         {
+            //Lerp from min value to max value using the counter as the parameter
             if (heartbeatSFX != null) heartbeatSFX.volume = Mathf.Lerp(0, heartbeatMax, t);
             vignette.intensity.value = Mathf.Lerp(vignetteMin, vignetteMax, t);
             filmGrain.intensity.value = Mathf.Lerp(filmGrainIntensityMin, filmGrainIntensityMax, t);

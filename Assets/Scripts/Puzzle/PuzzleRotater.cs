@@ -8,9 +8,9 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
     [SerializeField] Transform verticalPivot;
     [SerializeField] Transform verticalAim;
 
-    private static PuzzleRotater activePuzzle;
+    private static PuzzleRotater activePuzzle; // Used to make sure only one puzzles' methods are run
 
-    [Header("SFX Trigger")]
+    [Header("SFX Trigger")] // Variables used to check if sound should be played
     [SerializeField] private float currentRotation;
     [SerializeField] private float oldRotation;
     [SerializeField] private float rotationSFXTrigger = 0.05f;
@@ -24,17 +24,22 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
     
     void Awake()
     {
+        // Canvas reference to be used for sound effects
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
         settingsMenuScript = canvas.GetComponentInChildren<SettingsMenuToggle>();
+
+        //Get player and camera rotation reference to be used to rotate the pivots
         horizontalAim = GameObject.FindGameObjectWithTag("Player").transform;
         verticalAim = GameObject.FindGameObjectWithTag("PlayerCam").transform;
 
+        // Initial value check. Is calculated later on in sound
         currentRotation = horizontalPivot.eulerAngles.y;
         oldRotation = currentRotation;
     }
 
     void Update()
     {
+        // Only handle sound and rotation logic, if this is the active instance of all the puzzles.
         if (PlayerMovement.Instance.currentState == PlayerState.InPuzzle && activePuzzle == this)
         {
             DoPuzzle();
@@ -46,8 +51,10 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
     {
         settingsMenuScript.SetActivePuzzleScript(this);
         lastMoveTime = Time.time;
-        activePuzzle = this;
+        activePuzzle = this; 
         Debug.Log("Doing puzzle");
+
+        // Update playerstate and set players orientation to the mirrors' rotation
         PlayerMovement.Instance.currentState = PlayerState.InPuzzle;
         horizontalAim.rotation = Quaternion.LookRotation(horizontalPivot.forward);
         verticalAim.rotation = Quaternion.LookRotation(verticalPivot.forward);
@@ -67,6 +74,7 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
 
     public void Drop()
     {
+        // Clear active puzzle, reset playerstate and stop sfx
         activePuzzle = null;
         PlayerMovement.Instance.currentState = PlayerState.Normal;
         if (rotateSFX.isPlaying) rotateSFX.Stop();
@@ -74,7 +82,8 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
 
     private void PlayMirrorRotatingSFX()
     {
-        float changeValue = Mathf.Abs(Mathf.DeltaAngle(oldRotation, currentRotation));
+        // Check if mirror has been moved and only play sfx if it has
+        float changeValue = Mathf.Abs(Mathf.DeltaAngle(oldRotation, currentRotation)); 
 
         if (changeValue > rotationSFXTrigger)
         {
@@ -82,9 +91,10 @@ public class PuzzleRotater : MonoBehaviour, IInteractable
         
             if (!rotateSFX.isPlaying)
             {
-                rotateSFX.Play();
+                rotateSFX.Play(); // Only play the sound if sound isn't already playing
             }
         }
+        
         else if (rotateSFX.isPlaying && Time.time - lastMoveTime > stopDelay)
         {
             StopSFX();

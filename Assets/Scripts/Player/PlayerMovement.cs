@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance;
+    public static PlayerMovement Instance; //Singleton logic. Lets us refer to this script from elsewhere without needing a reference
 
     public PlayerState currentState = PlayerState.Normal;
 
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        //Ensure only one instance of PlayerMovement is in the scene at all times
         if (Instance == null)
         {
             Instance = this;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        //Initial value check. Is used later on to check if sound should be playing
         currentXPosition = transform.position.x + transform.position.z;
         oldXPosition = currentXPosition;
     }
@@ -44,14 +45,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerActionMap = InputSystem.actions.FindActionMap("Player");
-        playerActionMap.Enable();
+        playerActionMap.Enable(); // Switch to player action map
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
-        lastMoveTime = Time.time;
+        lastMoveTime = Time.time; // Check if there has been movement within a time period as an extra meassure for sound playing
     }
 
     void Update()
     {
+        //Only handle jumping, movement and sound if we're not in puzzle or locked
         if (currentState != PlayerState.InPuzzle && currentState != PlayerState.LockPlayer)
         {
             HandleJumping();
@@ -65,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         //Jump
         if (controller.isGrounded && jumpAction.IsPressed())
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); // Because physics
         }
         //Keep player grounded, by forcing slight negative downward velocity
         if(controller.isGrounded && velocity.y < 0)

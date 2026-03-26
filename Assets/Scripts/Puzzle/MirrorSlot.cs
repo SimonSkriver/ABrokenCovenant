@@ -4,6 +4,7 @@ public class MirrorSlot : MonoBehaviour
 {
     [SerializeField] Transform mirrorSocket;
 
+    // If a mirror enters the trigger collider, call SlotMirror() using the specific mirror as parameter
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Mirror")) 
@@ -11,7 +12,7 @@ public class MirrorSlot : MonoBehaviour
             SlotMirror(other.transform);
         }
     }
-
+    //  Clear the mirrors' held object variable, reset position and rotation after parenting and reset player state
     void SlotMirror(Transform mirror)
     {
         mirror.GetComponent<PickupAndDropItem>().heldObject = null;
