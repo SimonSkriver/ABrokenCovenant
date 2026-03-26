@@ -18,7 +18,7 @@ public class SkipCutscene : MonoBehaviour
     {
         if (skipCutscene.WasPressedThisFrame())
         {
-            SceneManager.LoadSceneAsync("Town", LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync("Town", LoadSceneMode.Single); // Load level scene, if skipCutscene is pressed
         }
     }
 }

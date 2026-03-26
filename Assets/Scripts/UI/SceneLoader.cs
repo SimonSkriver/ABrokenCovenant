@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    void OnEnable()
+    void OnEnable() // OnEnable allows animator to control when this method is run and loads the appropriate scene
     {
         Debug.Log("Loading new scene");
         if (SceneManager.GetActiveScene().name == "MainMenu") 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PickupAndDropItem : MonoBehaviour, IInteractable
+public class PickupAndDropItem : MonoBehaviour, IInteractable //Use interactable interface
 {
     private Transform hands;
     public GameObject heldObject;
@@ -20,6 +20,7 @@ public class PickupAndDropItem : MonoBehaviour, IInteractable
 
     public void Interact(GameObject obj)
     {
+        //Update playerstate and heldobject variable
         PlayerMovement.Instance.currentState = PlayerState.IsCarrying;
         heldObject = obj;
 
