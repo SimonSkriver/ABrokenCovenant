@@ -10,8 +10,8 @@ public class SettingsMenuToggle : MonoBehaviour
     [SerializeField] private GameObject mouseSensPanel;
     [SerializeField] private InputAction escapeAction;
     [SerializeField] private PlayerCameraMovement playerCameraMovement;
-    [SerializeField] private PuzzleRotater puzzleRotater;
-    private InputActionMap playerInputMap;
+    [SerializeField] private PuzzleRotater puzzleRotater; 
+    [SerializeField] private InputActionMap playerInputMap;
 
     [Header("Sensitivity settings")]
     [SerializeField] private Slider sensitivitySlider;
@@ -30,11 +30,14 @@ public class SettingsMenuToggle : MonoBehaviour
         playerInputMap.Enable();
         escapeAction = InputSystem.actions.FindAction("Escape");
         
+        // if escapeAction isnt null bind the method ShowAndHidePauseScreen to it
         if (escapeAction != null)
         {
             escapeAction.Enable();
             escapeAction.performed += ctx => ShowAndHidePauseScreen();
         }
+
+        // Ensure the sensitivity slider starts at the same value as initial sensitivity
         if (playerCameraMovement != null)
         {
             sensitivitySlider.value = playerCameraMovement.GetSensitivity();
