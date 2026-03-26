@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2476888824355772488}
   - {fileID: 4483551389730570488}
   - {fileID: 9182429695752395389}
   - {fileID: 7891882271407085920}
@@ -209,7 +210,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.6587379, y: 0.25953844, z: 0.64547646}
   m_Center: {x: -0.0044511557, y: -0.07159087, z: -0.0036994517}
@@ -461,7 +462,6 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2476888824355772488}
   - {fileID: 4535223709565185748}
   - {fileID: 2074759339513700845}
   - {fileID: 1430333973416840119}
@@ -496,7 +496,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6806052862161646134}
   - {fileID: 1457776928266378023}
   m_Father: {fileID: 7891882271407085920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -655,12 +654,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5624667826837888168}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.471, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.8918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0027, y: 0.471, z: -0.0294}
+  m_LocalScale: {x: 0.58100253, y: 1, z: 0.35781476}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3260361098037244715}
+  m_Father: {fileID: 1430333973416840119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &272072778331753676
 MeshFilter:
@@ -763,59 +762,6 @@ MonoBehaviour:
   lastMoveTime: 0
   rotateSFX: {fileID: 6309378341276690731}
   settingsMenuScript: {fileID: 0}
---- !u!1 &6468324171153893443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6806052862161646134}
-  - component: {fileID: 6540753096233907746}
-  m_Layer: 6
-  m_Name: MirrorSlotCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6806052862161646134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468324171153893443}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1390941957917032146}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6540753096233907746
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6468324171153893443}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3264939, y: 0.9237477, z: 1.2411314}
-  m_Center: {x: 0, y: -0.12, z: 0}
 --- !u!1 &6695872120026533118
 GameObject:
   m_ObjectHideFlags: 0
