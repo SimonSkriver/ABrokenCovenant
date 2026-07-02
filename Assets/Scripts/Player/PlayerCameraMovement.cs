@@ -7,6 +7,13 @@ public class PlayerCameraMovement : MonoBehaviour
     [SerializeField] private float mirrorSensitivityMultiplier = 0.25f;
     [SerializeField] Transform playerController;
 
+    [Header ("FOV Settings")]
+    [SerializeField] float walkFOV = 90;
+    [SerializeField] float sprintFOV = 100;
+    [SerializeField] float lerpSpeed = 5;
+
+
+    private Camera cam;
     private float xRotation = 0f;
     private InputAction lookAction;
     
@@ -16,11 +23,12 @@ public class PlayerCameraMovement : MonoBehaviour
         Cursor.visible = false;
         lookAction = InputSystem.actions.FindAction("Look");
         lookAction.Enable();
+        cam = GetComponent<Camera>();
     }
     
     void Start()
     {
-        mouseSensitivity = 0.33f;
+        mouseSensitivity = 0.10f;
     }
 
     void Update()
@@ -41,6 +49,8 @@ public class PlayerCameraMovement : MonoBehaviour
                 xRotation = Mathf.Clamp(xRotation, -90f, 90f);
                 transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
                 playerController.Rotate(Vector3.up * mouseX);
+
+                HandleFOV();
             }    
             else
             {    
@@ -67,5 +77,19 @@ public class PlayerCameraMovement : MonoBehaviour
     public void SetSensitivity(float value)
     {
         mouseSensitivity = value;
+    }
+
+    void HandleFOV()
+    {
+        float currentFOV = cam.fieldOfView;
+
+        if (PlayerMovement.Instance.isSprinting)
+        {
+            cam.fieldOfView = Mathf.Lerp(currentFOV, sprintFOV, Time.deltaTime * lerpSpeed);
+        }
+        else
+        {
+            cam.fieldOfView = Mathf.Lerp(currentFOV, walkFOV, Time.deltaTime * lerpSpeed);
+        }
     }
 }

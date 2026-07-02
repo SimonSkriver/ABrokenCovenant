@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private InputActionMap playerActionMap;
     private InputAction moveAction;
     private InputAction jumpAction;
+    private InputAction sprintAction;
 
     [SerializeField] CharacterController controller;
     [SerializeField] float movementSpeed = 3f;
+    [SerializeField] float sprintMultiplier = 1.7f;
     [SerializeField] float jumpHeight = 3f;
     [SerializeField] float gravity = -9.81f;
+    public bool isSprinting { get; private set; }
     private Vector3 velocity;
 
     [Header("SFX")]
@@ -48,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         playerActionMap.Enable(); // Switch to player action map
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        sprintAction = InputSystem.actions.FindAction("Sprint");
         lastMoveTime = Time.time; // Check if there has been movement within a time period as an extra meassure for sound playing
     }
 
@@ -81,9 +85,20 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         //Movement
+        float speed = movementSpeed;
+        if (sprintAction.IsPressed())
+        {
+            isSprinting = true;
+            speed *= sprintMultiplier;
+        }
+        else
+        {
+            isSprinting = false;
+            speed = movementSpeed;
+        }
         oldPosition = transform.position.x + transform.position.z;
         Vector2 inputValue = moveAction.ReadValue<Vector2>();
-        Vector3 horizontalMovement = (transform.right * inputValue.x + transform.forward * inputValue.y) * movementSpeed;
+        Vector3 horizontalMovement = (transform.right * inputValue.x + transform.forward * inputValue.y) * speed;
         
         //Combine vertical and horizontal movement
         Vector3 unifiedMovement = horizontalMovement + (velocity.y * Vector3.up);
